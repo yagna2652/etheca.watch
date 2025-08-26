@@ -1,127 +1,46 @@
-# AI-Powered Data Workspace Website
+# Getting Started with Create React App
 
-An exact replica of the Paradigm AI website with modern design, interactive elements, and responsive layout.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Features
+## Available Scripts
 
-- **Hero Section**: Dark-themed hero with animated grid background and interactive mouse effects
-- **Workspace Section**: Two-column layout showcasing data transformation capabilities
-- **Features Grid**: Interactive feature cards with hover effects
-- **Solutions Platform**: Tabbed interface showing different industry solutions
-- **Security Section**: Enterprise-grade security features with dark theme
-- **Testimonials**: Customer quotes with company logos
-- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
+In the project directory, you can run:
 
-## Technologies Used
+### `npm start`
 
-- **HTML5**: Semantic markup with proper accessibility
-- **CSS3**: Advanced styling with CSS Grid, Flexbox, and custom properties
-- **Vanilla JavaScript**: Interactive functionality and animations
-- **CSS Modules**: Component-based styling approach
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## File Structure
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-```
-├── index.html          # Main HTML structure
-├── styles.css          # Complete CSS styling
-├── script.js           # Interactive functionality
-└── README.md          # Project documentation
-```
+### `npm test`
 
-## Key Interactive Features
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### Hero Grid Animation
-- Interactive grid with mouse tracking
-- Radial gradient mask following cursor
-- Smooth hover effects and transitions
+### `npm run build`
 
-### Solutions Tabs
-- Dynamic content switching
-- Active state management
-- Smooth transitions between sections
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-### Scroll Animations
-- Intersection Observer for smooth reveals
-- Parallax effects on hero section
-- Staggered animations for feature cards
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-## Running the Website
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### Option 1: Direct File Opening
-Simply double-click `index.html` or open it in your browser.
+### `npm run eject`
 
-### Option 2: Local Server (Recommended)
-For the best experience, serve the files through a local server:
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-```bash
-# Using Python 3
-python -m http.server 8000
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-# Using Python 2
-python -m SimpleHTTPServer 8000
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-# Using Node.js (if you have http-server installed)
-npx http-server
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-# Using PHP
-php -S localhost:8000
-```
+## Learn More
 
-Then visit `http://localhost:8000` in your browser.
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-## Browser Compatibility
-
-- Chrome/Chromium (Recommended)
-- Firefox
-- Safari
-- Edge
-
-## Responsive Breakpoints
-
-- **Desktop**: 1200px and above
-- **Tablet**: 768px - 1199px  
-- **Mobile**: 767px and below
-
-## CSS Variables
-
-The design system uses CSS custom properties for consistent theming:
-
-```css
---color-black: #080B12
---color-blue: #0a33ff
---color-surface-gray: #F6F7F8
---font-atacama: Atacama Trial VAR
---font-neue-montreal: PP Neue Montreal
---section-gap: 120px
-```
-
-## Customization
-
-### Colors
-Update CSS variables in the `:root` selector to change the color scheme.
-
-### Typography  
-The website uses three main font families. Update the font variables to use different fonts.
-
-### Layout
-Grid and flexbox layouts can be modified by updating the respective CSS classes.
-
-## Performance Features
-
-- Debounced resize handlers
-- Intersection Observer for efficient scroll animations  
-- CSS-only hover effects where possible
-- Optimized grid cell generation
-
-## Future Enhancements
-
-- [ ] Add actual font files
-- [ ] Include real product screenshots
-- [ ] Add more interactive animations
-- [ ] Implement dark/light theme toggle
-- [ ] Add form functionality
-- [ ] Include analytics tracking
-
-## License
-
-This is a design replica created for educational/demonstration purposes.
+To learn React, check out the [React documentation](https://reactjs.org/).
