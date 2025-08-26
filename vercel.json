@@ -1,8 +1,11 @@
 {
   "version": 2,
+  "buildCommand": "cd react-website && npm run build",
+  "outputDirectory": "react-website/build",
+  "installCommand": "cd react-website && npm install",
   "builds": [
     {
-      "src": "package.json",
+      "src": "react-website/package.json",
       "use": "@vercel/static-build",
       "config": { "distDir": "build" }
     }
