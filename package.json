@@ -29,7 +29,6 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "vercel-build": "npm run build",
     "test": "craco test"
   },
   "eslintConfig": {
