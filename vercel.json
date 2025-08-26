@@ -1,8 +1,15 @@
 {
-  "buildCommand": "cd react-website && npm run build",
-  "outputDirectory": "react-website/build",
-  "installCommand": "cd react-website && npm install",
+  "builds": [
+    {
+      "src": "react-website/package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "build" }
+    }
+  ],
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
   ]
 }
