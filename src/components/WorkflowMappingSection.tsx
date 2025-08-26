@@ -1,7 +1,7 @@
 import React from 'react';
-import StoryImage from '../images/Story-removebg-preview.png';
+const StoryImage = '/images/Story-removebg-preview.png';
 
-const IntegrationsSection: React.FC = () => {
+const WorkflowMappingSection: React.FC = () => {
   return (
     <section className="CalloutSection_section___KRUc">
       <div className="CalloutSection_container__evjvR">
@@ -45,4 +45,4 @@ const IntegrationsSection: React.FC = () => {
   );
 };
 
-export default IntegrationsSection;
+export default WorkflowMappingSection;

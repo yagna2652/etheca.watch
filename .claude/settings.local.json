@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(npm install:*)",
-      "Bash(npx shadcn@latest add:*)"
+      "Bash(npx shadcn@latest add:*)",
+      "Bash(git fetch:*)",
+      "Read(//Users/yagna/Desktop/etheca-watch-new/**)"
     ],
     "deny": [],
     "ask": []

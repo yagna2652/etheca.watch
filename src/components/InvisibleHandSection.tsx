@@ -1,7 +1,7 @@
 import React from 'react';
-import InvisibleHandImage from '../images/Invisible-hand-removebg-preview.png';
+const InvisibleHandImage = '/images/Invisible-hand-removebg-preview.png';
 
-const WorkspaceSection: React.FC = () => {
+const InvisibleHandSection: React.FC = () => {
   return (
     <section className="Home_gradient_wrapper__ndCXg" style={{ borderTop: '1px solid #e0e0e0' }}>
       <div className="CalloutSection_section___KRUc">
@@ -47,4 +47,4 @@ const WorkspaceSection: React.FC = () => {
   );
 };
 
-export default WorkspaceSection;
+export default InvisibleHandSection;

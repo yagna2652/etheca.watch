@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 
-const HeroSection: React.FC = () => {
+const AutomationHero: React.FC = () => {
 
 
   return (
@@ -41,4 +41,4 @@ const HeroSection: React.FC = () => {
   );
 };
 
-export default HeroSection;
+export default AutomationHero;

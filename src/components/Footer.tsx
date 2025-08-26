@@ -15,7 +15,6 @@ const Footer: React.FC = () => {
               maxWidth: '700px',
               margin: '0 auto',
               fontFamily: 'var(--font-primary)',
-              color: 'var(--color-text-white)',
               textAlign: 'center',
               padding: '0 20px'
             }}

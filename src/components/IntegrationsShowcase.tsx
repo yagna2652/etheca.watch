@@ -1,7 +1,7 @@
 import React from 'react';
-import WorksWithToolsImage from '../images/workswithyourtools-removebg-preview.png';
+const WorksWithToolsImage = '/images/workswithyourtools-removebg-preview.png';
 
-const DataSection: React.FC = () => {
+const IntegrationsShowcase: React.FC = () => {
   return (
     <section className="CalloutSection_section___KRUc">
       <div className="CalloutSection_container__evjvR">
@@ -46,4 +46,4 @@ const DataSection: React.FC = () => {
   );
 };
 
-export default DataSection;
+export default IntegrationsShowcase;
