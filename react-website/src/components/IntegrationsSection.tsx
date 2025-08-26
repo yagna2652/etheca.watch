@@ -17,14 +17,14 @@ const IntegrationsSection: React.FC = () => {
           <div className="CalloutSection_graphic__DaHKB">
             <div
               style={{
-                background: 'var(--color-white)',
+                background: 'white',
                 borderRadius: '0px',
                 height: '100%',
                 width: '100%',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                padding: '0'
+                padding: '20px'
               }}
             >
               <img
@@ -32,9 +32,7 @@ const IntegrationsSection: React.FC = () => {
                 alt="Review, Approve, Done - workflow approval process"
                 style={{
                   maxWidth: '100%',
-                  maxHeight: '100%',
-                  width: 'auto',
-                  height: 'auto',
+                  maxHeight: '320px',
                   objectFit: 'contain',
                   display: 'block'
                 }}

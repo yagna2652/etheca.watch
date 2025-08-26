@@ -17,14 +17,14 @@ const DataSection: React.FC = () => {
           <div className="CalloutSection_graphic__DaHKB DataSection_graphic__r_FIJ">
             <div
               style={{
-                background: 'var(--color-white)',
+                background: 'white',
                 borderRadius: '0px',
                 height: '100%',
                 width: '100%',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                padding: '0'
+                padding: '20px'
               }}
             >
               <img
@@ -32,9 +32,7 @@ const DataSection: React.FC = () => {
                 alt="Works with your tools - integrations with CRMs and project management"
                 style={{
                   maxWidth: '100%',
-                  maxHeight: '100%',
-                  width: 'auto',
-                  height: 'auto',
+                  maxHeight: '320px',
                   objectFit: 'contain',
                   display: 'block'
                 }}

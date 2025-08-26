@@ -17,29 +17,27 @@ const WorkspaceSection: React.FC = () => {
             </div>
             <div className="CalloutSection_graphic__DaHKB">
               <div
-              style={{
-                background: 'var(--color-white)',
-                borderRadius: '0px',
-                height: '100%',
-                width: '100%',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                padding: '0'
-              }}
-            >
-              <img
-                src={InvisibleHandImage}
-                alt="The invisible hand that updates your data"
                 style={{
-                  maxWidth: '100%',
-                  maxHeight: '100%',
-                  width: 'auto',
-                  height: 'auto',
-                  objectFit: 'contain',
-                  display: 'block'
+                  background: 'white',
+                  borderRadius: '0px',
+                  height: '100%',
+                  width: '100%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  padding: '20px'
                 }}
-              />
+              >
+                <img
+                  src={InvisibleHandImage}
+                  alt="The invisible hand that updates your data"
+                  style={{
+                    maxWidth: '100%',
+                    maxHeight: '320px',
+                    objectFit: 'contain',
+                    display: 'block'
+                  }}
+                />
               </div>
             </div>
           </div>
