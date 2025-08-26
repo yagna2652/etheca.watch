@@ -24,7 +24,7 @@ const Header: React.FC = () => {
           height: '100%',
           maxWidth: '1920px',
           margin: '0 auto',
-          padding: '0 80px'
+          padding: '0 var(--layout-margin)'
         }}
       >
         {/* Logo Section */}
@@ -50,7 +50,7 @@ const Header: React.FC = () => {
             <span
               style={{
                 color: 'var(--color-text-black)',
-                fontSize: '24px',
+                fontSize: 'clamp(20px, 4vw, 24px)',
                 fontWeight: '700',
                 fontFamily: 'var(--font-primary)'
               }}
@@ -71,10 +71,11 @@ const Header: React.FC = () => {
                 border: 'none',
                 borderRadius: '4px',
                 fontFamily: 'var(--font-primary)',
-                fontSize: '16px',
+                fontSize: 'clamp(14px, 3vw, 16px)',
                 fontWeight: '500',
                 minHeight: '44px',
-                cursor: 'pointer'
+                cursor: 'pointer',
+                whiteSpace: 'nowrap'
               }}
             >
               Contact Us
