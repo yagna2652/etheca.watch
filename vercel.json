@@ -1,7 +1,7 @@
 {
   "builds": [
     {
-      "src": "react-website/package.json",
+      "src": "package.json",
       "use": "@vercel/static-build",
       "config": { "distDir": "build" }
     }
@@ -9,7 +9,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/react-website/build/index.html"
+      "destination": "/build/index.html"
     }
   ]
 }
