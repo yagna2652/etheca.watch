@@ -22,7 +22,34 @@ const Footer: React.FC = () => {
             Breakthroughs are born from the freedom to explore, not from busywork
           </h2>
           <div style={{marginTop: '40px'}}>
-            <Button size="lg">Get Started Today</Button>
+            <Button
+              size="lg"
+              onClick={() => window.open('mailto:hello@etheca.watch', '_blank')}
+              style={{
+                backgroundColor: '#44547e',
+                color: '#fff',
+                padding: '16px 32px',
+                border: 'none',
+                borderRadius: '4px',
+                fontFamily: 'var(--font-primary)',
+                fontSize: '16px',
+                fontWeight: '500',
+                minHeight: '48px',
+                minWidth: '160px',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#3a4469';
+                e.currentTarget.style.transform = 'translateY(-2px)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = '#44547e';
+                e.currentTarget.style.transform = 'translateY(0)';
+              }}
+            >
+              Get Started Today
+            </Button>
           </div>
           <div style={{marginTop: '60px', fontSize: '14px', color: 'var(--color-text-white)', opacity: 0.8}}>
             <div style={{marginBottom: '8px'}}>© 2025 Etheca</div>

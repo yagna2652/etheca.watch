@@ -18,6 +18,7 @@ const AutomationHero: React.FC = () => {
             <div className="HeroSection_button_container__RfDt0">
               <Button
                 size="lg"
+                onClick={() => window.open('mailto:hello@etheca.watch', '_blank')}
                 style={{
                   backgroundColor: '#44547e',
                   color: '#fff',
@@ -28,7 +29,17 @@ const AutomationHero: React.FC = () => {
                   fontSize: '18px',
                   fontWeight: '500',
                   minHeight: '56px',
-                  minWidth: '180px'
+                  minWidth: '180px',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = '#3a4469';
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = '#44547e';
+                  e.currentTarget.style.transform = 'translateY(0)';
                 }}
               >
                 Contact Us
