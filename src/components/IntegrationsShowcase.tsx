@@ -30,6 +30,7 @@ const IntegrationsShowcase: React.FC = () => {
               <img
                 src={WorksWithToolsImage}
                 alt="Works with your tools - integrations with CRMs and project management"
+                className="content-image-mobile"
                 style={{
                   maxWidth: '100%',
                   maxHeight: '320px',

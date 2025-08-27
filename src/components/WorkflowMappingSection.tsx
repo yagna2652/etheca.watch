@@ -30,6 +30,7 @@ const WorkflowMappingSection: React.FC = () => {
               <img
                 src={StoryImage}
                 alt="Review, Approve, Done - workflow approval process"
+                className="content-image-mobile"
                 style={{
                   maxWidth: '100%',
                   maxHeight: '320px',

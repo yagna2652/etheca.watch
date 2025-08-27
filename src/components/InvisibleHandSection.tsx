@@ -31,6 +31,7 @@ const InvisibleHandSection: React.FC = () => {
                 <img
                   src={InvisibleHandImage}
                   alt="The invisible hand that updates your data"
+                  className="content-image-mobile"
                   style={{
                     maxWidth: '100%',
                     maxHeight: '320px',

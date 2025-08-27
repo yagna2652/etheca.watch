@@ -16,7 +16,7 @@ const Header: React.FC = () => {
         backdropFilter: 'blur(8px)'
       }}
     >
-      <div 
+      <div
         style={{
           display: 'flex',
           alignItems: 'center',
@@ -24,7 +24,8 @@ const Header: React.FC = () => {
           height: '100%',
           maxWidth: '1920px',
           margin: '0 auto',
-          padding: '0 var(--layout-margin)'
+          padding: '0 var(--layout-margin)',
+          width: '100%'
         }}
       >
         {/* Logo Section */}
@@ -38,9 +39,10 @@ const Header: React.FC = () => {
               gap: '12px'
             }}
           >
-            <img 
-              src={EthecaLogo} 
-              alt="Etheca Logo" 
+            <img
+              src={EthecaLogo}
+              alt="Etheca Logo"
+              className="header-logo-mobile"
               style={{
                 height: '40px',
                 width: 'auto',
