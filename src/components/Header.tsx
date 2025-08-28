@@ -11,7 +11,7 @@ const Header: React.FC = () => {
         zIndex: 50,
         width: '100%',
         height: '80px',
-        background: 'var(--color-white)',
+        background: 'var(--color-surface-gray)',
         borderBottom: '1px solid var(--color-border-grid-alpha-60-white)',
         backdropFilter: 'blur(8px)'
       }}
@@ -36,7 +36,7 @@ const Header: React.FC = () => {
               textDecoration: 'none',
               display: 'flex',
               alignItems: 'center',
-              gap: '12px'
+              gap: '4px'
             }}
           >
             <img
@@ -52,8 +52,10 @@ const Header: React.FC = () => {
             <span
               style={{
                 color: 'var(--color-text-black)',
-                fontSize: 'clamp(20px, 4vw, 24px)',
+                fontSize: '24px',
                 fontWeight: '700',
+                letterSpacing: '-0.02em',
+                lineHeight: '1.4',
                 fontFamily: 'var(--font-primary)'
               }}
             >
@@ -66,18 +68,22 @@ const Header: React.FC = () => {
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <a href="mailto:hello@etheca.watch" style={{ textDecoration: 'none' }}>
             <Button 
+              size="default"
               style={{ 
-                backgroundColor: '#44547e', 
-                color: '#fff',
-                padding: '12px 24px',
+                backgroundColor: '#1a1a22', 
+                color: '#f4f4f6',
                 border: 'none',
-                borderRadius: '4px',
+                borderRadius: '8px',
                 fontFamily: 'var(--font-primary)',
-                fontSize: 'clamp(14px, 3vw, 16px)',
+                cursor: 'pointer',
+                whiteSpace: 'nowrap',
+                padding: '12px 24px',
+                fontSize: '14px',
                 fontWeight: '500',
                 minHeight: '44px',
-                cursor: 'pointer',
-                whiteSpace: 'nowrap'
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center'
               }}
             >
               Contact Us

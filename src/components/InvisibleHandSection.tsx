@@ -3,11 +3,21 @@ const InvisibleHandImage = '/images/Invisible-hand-removebg-preview.png';
 
 const InvisibleHandSection: React.FC = () => {
   return (
-    <section className="Home_gradient_wrapper__ndCXg" style={{ borderTop: '1px solid #e0e0e0' }}>
-      <div className="CalloutSection_section___KRUc">
+    <section style={{ borderTop: '1px solid var(--color-border-grid-alpha-60-white)', position: 'relative' }}>
+      <div className="CalloutSection_section___KRUc" style={{ position: 'relative' }}>
         <div className="CalloutSection_container__evjvR">
           <div className="CalloutSection_callout_container__A2Wzj">
-            <div className="CalloutSection_content__6LL3k">
+            <div 
+              className="CalloutSection_content__6LL3k"
+              style={{
+                position: 'relative',
+                backgroundSize: '20px 20px',
+                backgroundImage: `
+                  linear-gradient(to right, rgba(224, 224, 229, 0.3) 1px, transparent 1px),
+                  linear-gradient(to bottom, rgba(224, 224, 229, 0.3) 1px, transparent 1px)
+                `,
+              }}
+            >
               <h2 className="CalloutSection_title__7dfAl FeaturesSection_heading_2__z9mcA">
                 The invisible hand that updates your data
               </h2>
@@ -18,8 +28,8 @@ const InvisibleHandSection: React.FC = () => {
             <div className="CalloutSection_graphic__DaHKB">
               <div
                 style={{
-                  background: 'white',
-                  borderRadius: '0px',
+                  background: 'var(--color-surface-gray)',
+                  borderRadius: 'var(--radius)',
                   height: '100%',
                   width: '100%',
                   display: 'flex',

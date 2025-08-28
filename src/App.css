@@ -17,26 +17,26 @@
     --spacer-xxxl: 80px;
     --block-gap: 80px;
     --section-gap: 120px;
-    --color-black-absolute: #000;
-    --color-white-absolute: #fff;
+    --color-black-absolute: #0f0f11;
+    --color-white-absolute: #f2f2f4;
     --color-white: var(--color-white-absolute);
-    --color-black: #080B12;
+    --color-black: #181820;
     --color-blue: #0a33ff;
-    --color-grey: #7d7d7d;
-    --color-border-blue: #dfe8f8;
-    --color-border-grid: #848a9c;
-    --color-border-grid-alpha-40-black: color-mix(in srgb, var(--color-border-grid), black 60%);
-    --color-border-grid-alpha-60-white: color-mix(in srgb, var(--color-border-grid), white 40%);
-    --color-border-grid-alpha-60-black: color-mix(in srgb, var(--color-border-grid), black 40%);
-    --color-surface-gray: #ffffff;
-    --color-surface-dark-gray: #f8f9fa;
-    --color-text-white: #F6F6F8;
-    --color-text-white-alpha-70: color-mix(in srgb, var(--color-text-white), black 30%);
-    --color-text-white-alpha-90: color-mix(in srgb, var(--color-text-white), black 10%);
-    --color-text-black: #0A0C15;
-    --color-text-black-alpha-50: color-mix(in srgb, var(--color-text-black), white 50%);
-    --color-text-black-alpha-65: color-mix(in srgb, var(--color-text-black), white 35%);
-    --color-text-black-alpha-70: color-mix(in srgb, var(--color-text-black), white 30%);
+    --color-grey: #787885;
+    --color-border-blue: #e2e6f0;
+    --color-border-grid: #828294;
+    --color-border-grid-alpha-40-black: color-mix(in srgb, var(--color-border-grid), var(--color-black) 60%);
+    --color-border-grid-alpha-60-white: color-mix(in srgb, var(--color-border-grid), var(--color-white) 40%);
+    --color-border-grid-alpha-60-black: color-mix(in srgb, var(--color-border-grid), var(--color-black) 40%);
+    --color-surface-gray: #f4f4f6;
+    --color-surface-dark-gray: #ececf0;
+    --color-text-white: #f4f4f6;
+    --color-text-white-alpha-70: color-mix(in srgb, var(--color-text-white), var(--color-black) 30%);
+    --color-text-white-alpha-90: color-mix(in srgb, var(--color-text-white), var(--color-black) 10%);
+    --color-text-black: #1a1a22;
+    --color-text-black-alpha-50: color-mix(in srgb, var(--color-text-black), var(--color-white) 50%);
+    --color-text-black-alpha-65: color-mix(in srgb, var(--color-text-black), var(--color-white) 35%);
+    --color-text-black-alpha-70: color-mix(in srgb, var(--color-text-black), var(--color-white) 30%);
     --font-eiko: 'Covik Sans';
     --font-neue-montreal: 'Covik Sans';
     --font-atacama: 'Covik Sans';
@@ -176,11 +176,6 @@ img {
 
 /* Component Classes */
 
-/* Home Gradient Wrapper */
-.Home_gradient_wrapper__ndCXg {
-    background: linear-gradient(180deg, #ffffff -10.64%, #ffffff 63.41%, #f8f9fa 115.48%), #ffffff;
-    position: relative;
-}
 
 /* Hero Section */
 .HeroSection_hero__MpuRV {

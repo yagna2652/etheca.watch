@@ -3,10 +3,20 @@ const StoryImage = '/images/Story-removebg-preview.png';
 
 const WorkflowMappingSection: React.FC = () => {
   return (
-    <section className="CalloutSection_section___KRUc">
+    <section className="CalloutSection_section___KRUc" style={{ borderTop: '1px solid var(--color-border-grid-alpha-60-white)' }}>
       <div className="CalloutSection_container__evjvR">
         <div className="CalloutSection_callout_container__A2Wzj">
-          <div className="CalloutSection_content__6LL3k">
+          <div 
+            className="CalloutSection_content__6LL3k"
+            style={{
+              position: 'relative',
+              backgroundSize: '20px 20px',
+              backgroundImage: `
+                linear-gradient(to right, rgba(224, 224, 229, 0.3) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(224, 224, 229, 0.3) 1px, transparent 1px)
+              `,
+            }}
+          >
             <h2 className="CalloutSection_title__7dfAl FeaturesSection_heading_2__z9mcA">
               We map the chaos
             </h2>
@@ -17,7 +27,7 @@ const WorkflowMappingSection: React.FC = () => {
           <div className="CalloutSection_graphic__DaHKB">
             <div
               style={{
-                background: 'white',
+                background: 'var(--color-surface-gray)',
                 borderRadius: '0px',
                 height: '100%',
                 width: '100%',

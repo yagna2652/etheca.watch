@@ -5,48 +5,48 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --background: #f4f4f6;
+    --foreground: #1a1a22;
+    --card: #f4f4f6;
+    --card-foreground: #1a1a22;
+    --popover: #f4f4f6;
+    --popover-foreground: #1a1a22;
+    --primary: #2a2a32;
+    --primary-foreground: #ededf0;
+    --secondary: #e6e6ea;
+    --secondary-foreground: #2a2a32;
+    --muted: #e6e6ea;
+    --muted-foreground: #808088;
+    --accent: #e6e6ea;
+    --accent-foreground: #2a2a32;
+    --destructive: #dc2626;
+    --destructive-foreground: #ededf0;
+    --border: #e0e0e5;
+    --input: #e0e0e5;
+    --ring: #1a1a22;
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --background: #141418;
+    --foreground: #ededf0;
+    --card: #1f1f25;
+    --card-foreground: #ededf0;
+    --popover: #1f1f25;
+    --popover-foreground: #ededf0;
+    --primary: #e0e0e5;
+    --primary-foreground: #2a2a32;
+    --secondary: #33333a;
+    --secondary-foreground: #e0e0e5;
+    --muted: #33333a;
+    --muted-foreground: #a6a6ae;
+    --accent: #33333a;
+    --accent-foreground: #e0e0e5;
+    --destructive: #dc2626;
+    --destructive-foreground: #ededf0;
+    --border: #3d3d46;
+    --input: #3d3d46;
+    --ring: #ccccda;
   }
 }
 
@@ -62,7 +62,7 @@
 /* Covik Sans Font Implementation */
 @font-face {
   font-family: 'Covik Sans';
-  src: url('./assets/fonnts.com-Covik_Sans.otf') format('opentype');
+  src: url('/assets/fonnts.com-Covik_Sans.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -70,7 +70,7 @@
 
 @font-face {
   font-family: 'Covik Sans';
-  src: url('./assets/fonnts.com-Covik_Sans_Italic.otf') format('opentype');
+  src: url('/assets/fonnts.com-Covik_Sans_Italic.otf') format('opentype');
   font-weight: 400;
   font-style: italic;
   font-display: swap;
@@ -78,7 +78,7 @@
 
 @font-face {
   font-family: 'Covik Sans';
-  src: url('./assets/fonnts.com-Covik_Sans_Medium.otf') format('opentype');
+  src: url('/assets/fonnts.com-Covik_Sans_Medium.otf') format('opentype');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -86,7 +86,7 @@
 
 @font-face {
   font-family: 'Covik Sans';
-  src: url('./assets/fonnts.com-Covik_Sans_Semibold.otf') format('opentype');
+  src: url('/assets/fonnts.com-Covik_Sans_Semibold.otf') format('opentype');
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -94,7 +94,7 @@
 
 @font-face {
   font-family: 'Covik Sans';
-  src: url('./assets/fonnts.com-Covik_Sans_Semibold_Italic.otf') format('opentype');
+  src: url('/assets/fonnts.com-Covik_Sans_Semibold_Italic.otf') format('opentype');
   font-weight: 600;
   font-style: italic;
   font-display: swap;
@@ -102,7 +102,7 @@
 
 @font-face {
   font-family: 'Covik Sans';
-  src: url('./assets/fonnts.com-Covik_Sans_Bold.otf') format('opentype');
+  src: url('/assets/fonnts.com-Covik_Sans_Bold.otf') format('opentype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -110,7 +110,7 @@
 
 @font-face {
   font-family: 'Covik Sans';
-  src: url('./assets/fonnts.com-Covik_Sans_Bold_Italic.otf') format('opentype');
+  src: url('/assets/fonnts.com-Covik_Sans_Bold_Italic.otf') format('opentype');
   font-weight: 700;
   font-style: italic;
   font-display: swap;
@@ -118,7 +118,7 @@
 
 @font-face {
   font-family: 'Covik Sans';
-  src: url('./assets/fonnts.com-Covik_Sans_Black.otf') format('opentype');
+  src: url('/assets/fonnts.com-Covik_Sans_Black.otf') format('opentype');
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -126,7 +126,7 @@
 
 @font-face {
   font-family: 'Covik Sans';
-  src: url('./assets/fonnts.com-Covik_Sans_Black_Italic.otf') format('opentype');
+  src: url('/assets/fonnts.com-Covik_Sans_Black_Italic.otf') format('opentype');
   font-weight: 900;
   font-style: italic;
   font-display: swap;
@@ -144,38 +144,38 @@
   --layout-min-max: min(var(--vw), var(--layout-max-width));
   --header-height: 70px;
   
-  /* Spacing System */
+  /* Spacing System - Mathematical Grid (Rule 10) */
   --spacer-xs: 4px;
   --spacer-sm: 8px;
   --spacer-md: 16px;
   --spacer-lg: 24px;
   --spacer-xl: 32px;
-  --spacer-xxl: 40px;
-  --spacer-xxxl: 80px;
+  --spacer-xxl: 48px;
+  --spacer-xxxl: 64px;
   --block-gap: 80px;
-  --section-gap: 120px;
+  --section-gap: 96px;
   
-  /* Color System */
-  --color-black-absolute: #000;
-  --color-white-absolute: #fff;
+  /* Color System - Following Design Rules 1-7 */
+  --color-black-absolute: #0f0f11;
+  --color-white-absolute: #f2f2f4;
   --color-white: var(--color-white-absolute);
-  --color-black: #080B12;
+  --color-black: #181820;
   --color-blue: #0a33ff;
-  --color-grey: #7d7d7d;
-  --color-border-blue: #dfe8f8;
-  --color-border-grid: #848a9c;
-  --color-border-grid-alpha-40-black: color-mix(in srgb, var(--color-border-grid), black 60%);
-  --color-border-grid-alpha-60-white: color-mix(in srgb, var(--color-border-grid), white 40%);
-  --color-border-grid-alpha-60-black: color-mix(in srgb, var(--color-border-grid), black 40%);
-  --color-surface-gray: #F6F7F8;
-  --color-surface-dark-gray: #EDEEF1;
-  --color-text-white: #F6F6F8;
-  --color-text-white-alpha-70: color-mix(in srgb, var(--color-text-white), black 30%);
-  --color-text-white-alpha-90: color-mix(in srgb, var(--color-text-white), black 10%);
-  --color-text-black: #0A0C15;
-  --color-text-black-alpha-50: color-mix(in srgb, var(--color-text-black), white 50%);
-  --color-text-black-alpha-65: color-mix(in srgb, var(--color-text-black), white 35%);
-  --color-text-black-alpha-70: color-mix(in srgb, var(--color-text-black), white 30%);
+  --color-grey: #787885;
+  --color-border-blue: #e2e6f0;
+  --color-border-grid: #828294;
+  --color-border-grid-alpha-40-black: color-mix(in srgb, var(--color-border-grid), var(--color-black) 60%);
+  --color-border-grid-alpha-60-white: color-mix(in srgb, var(--color-border-grid), var(--color-white) 40%);
+  --color-border-grid-alpha-60-black: color-mix(in srgb, var(--color-border-grid), var(--color-black) 40%);
+  --color-surface-gray: #f4f4f6;
+  --color-surface-dark-gray: #ececf0;
+  --color-text-white: #f4f4f6;
+  --color-text-white-alpha-70: color-mix(in srgb, var(--color-text-white), var(--color-black) 30%);
+  --color-text-white-alpha-90: color-mix(in srgb, var(--color-text-white), var(--color-black) 10%);
+  --color-text-black: #1a1a22;
+  --color-text-black-alpha-50: color-mix(in srgb, var(--color-text-black), var(--color-white) 50%);
+  --color-text-black-alpha-65: color-mix(in srgb, var(--color-text-black), var(--color-white) 35%);
+  --color-text-black-alpha-70: color-mix(in srgb, var(--color-text-black), var(--color-white) 30%);
   
   /* Font System - Covik Sans Only */
   --font-primary: 'Covik Sans';
@@ -188,9 +188,9 @@
   /* Grid System */
   --column-count: 12;
   
-  /* Font Sizes */
-  --text-xs: 0.75rem;
-  --text-sm: 0.875rem;
+  /* Font Sizes - Rule 17: Body text 16px minimum */
+  --text-xs: 0.875rem;
+  --text-sm: 1rem;
   --text-base: 1rem;
   --text-lg: 1.125rem;
   --text-xl: 1.25rem;
@@ -198,6 +198,7 @@
   --text-3xl: 1.875rem;
   --text-4xl: 2.25rem;
   --text-5xl: 3rem;
+  
 }
 
 /* Responsive adjustments */

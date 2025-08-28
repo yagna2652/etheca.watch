@@ -3,10 +3,20 @@ const WorksWithToolsImage = '/images/workswithyourtools-removebg-preview.png';
 
 const IntegrationsShowcase: React.FC = () => {
   return (
-    <section className="CalloutSection_section___KRUc">
+    <section className="CalloutSection_section___KRUc" style={{ borderTop: '1px solid var(--color-border-grid-alpha-60-white)' }}>
       <div className="CalloutSection_container__evjvR">
         <div className="CalloutSection_callout_container__A2Wzj">
-          <div className="CalloutSection_content__6LL3k">
+          <div 
+            className="CalloutSection_content__6LL3k"
+            style={{
+              position: 'relative',
+              backgroundSize: '20px 20px',
+              backgroundImage: `
+                linear-gradient(to right, rgba(224, 224, 229, 0.3) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(224, 224, 229, 0.3) 1px, transparent 1px)
+              `,
+            }}
+          >
             <h2 className="CalloutSection_title__7dfAl FeaturesSection_heading_2__z9mcA">
               Works with your tools.
             </h2>
@@ -17,14 +27,14 @@ const IntegrationsShowcase: React.FC = () => {
           <div className="CalloutSection_graphic__DaHKB DataSection_graphic__r_FIJ">
             <div
               style={{
-                background: 'white',
-                borderRadius: '0px',
+                background: 'var(--color-surface-gray)',
+                borderRadius: 'var(--radius)',
                 height: '100%',
                 width: '100%',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                padding: '20px'
+                padding: 'var(--spacer-lg)'
               }}
             >
               <img
