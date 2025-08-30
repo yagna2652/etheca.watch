@@ -5,6 +5,7 @@ import Head from 'next/head';
 import Header from '../../src/components/Header';
 import Footer from '../../src/components/Footer';
 import ScrollProgress from '../../src/components/ScrollProgress';
+import BlogEntry from '../../src/components/BlogEntry';
 import { getSortedContentSummaries, ContentSummary } from '../../lib/contentService';
 
 interface BlogIndexProps {
@@ -31,10 +32,16 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ allPostsData }) => {
             <div className="CalloutSection_container__evjvR">
               <div className="blog-title-section-inner">
                 <h1 className="blog-title">Blog</h1>
-                <div className="blog-horizontal-divider"></div>
               </div>
             </div>
           </section>
+
+          {/* Blog Entries */}
+          <div className="blog-entries-container">
+            {allPostsData.map((post) => (
+              <BlogEntry key={post.id} {...post} />
+            ))}
+          </div>
 
         </div>
         <Footer />
