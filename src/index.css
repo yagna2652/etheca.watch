@@ -234,7 +234,7 @@ html {
   overflow: visible;
   position: relative;
   min-height: 100%;
-  font-size: var(--rem);
+  font-size: 16px;
   color: var(--color-black);
   background: var(--color-surface-gray);
   scroll-behavior: auto;

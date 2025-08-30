@@ -20,79 +20,24 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ allPostsData }) => {
       </Head>
       
       <ScrollProgress />
-      <Header />
-      
-      <main style={{ 
-        background: 'var(--color-surface-gray)',
-        minHeight: '100vh',
-        paddingTop: 'var(--header-height)'
-      }}>
-        {/* Blog Title Section */}
-        <section className="blog-title-section">
-          <div className="blog-title-container">
-            <div className="blog-title-line"></div>
-            <h1 className="blog-title">Blog</h1>
-            <div className="blog-title-line"></div>
-          </div>
-        </section>
-
-        {/* Blog Posts Grid Section */}
-        <section className="blog-posts-section">
-          <div className="blog-container">
-            <div className="blog-grid">
-              {allPostsData.map((post) => (
-                <Link key={post.id} href={`/blog/${post.id}`} className="blog-card-link">
-                  <article className="blog-card">
-                    {/* Thumbnail Image */}
-                    {post.thumbnail && (
-                      <div className="blog-card-image">
-                        <img 
-                          src={post.thumbnail} 
-                          alt={post.title}
-                          style={{
-                            width: '100%',
-                            height: '200px',
-                            objectFit: 'cover',
-                            borderRadius: 'var(--radius) var(--radius) 0 0'
-                          }}
-                        />
-                      </div>
-                    )}
-                    
-                    {/* Content Section */}
-                    <div className="blog-card-content">
-                      <h2 className="blog-card-title">{post.title}</h2>
-                      
-                      {/* Metadata */}
-                      <div className="blog-card-meta">
-                        {post.date && (
-                          <time className="blog-card-date">
-                            {new Date(post.date).toLocaleDateString('en-US', {
-                              year: 'numeric',
-                              month: 'long',
-                              day: 'numeric'
-                            })}
-                          </time>
-                        )}
-                        {post.author && (
-                          <span className="blog-card-author">by {post.author}</span>
-                        )}
-                      </div>
-                      
-                      {/* Excerpt */}
-                      {post.description && (
-                        <p className="blog-card-excerpt">{post.description}</p>
-                      )}
-                    </div>
-                  </article>
-                </Link>
-              ))}
+      <div className="App">
+        <Header />
+        <div className="content-with-lines" style={{ 
+          background: 'var(--color-surface-gray)',
+          minHeight: '100vh'
+        }}>
+          {/* Blog Title Section */}
+          <section className="CalloutSection_section___KRUc">
+            <div className="CalloutSection_container__evjvR">
+              <div className="blog-title-section-inner">
+                <h1 className="blog-title">Blog</h1>
+              </div>
             </div>
-          </div>
-        </section>
-      </main>
-      
-      <Footer />
+          </section>
+
+        </div>
+        <Footer />
+      </div>
     </>
   );
 };

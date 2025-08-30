@@ -24,13 +24,13 @@ const BlogPost: React.FC<BlogPostProps> = ({ postData }) => {
       
       <main style={{ 
         background: 'var(--color-surface-gray)',
-        minHeight: '100vh',
-        paddingTop: 'var(--header-height)'
+        minHeight: '100vh'
       }}>
         {/* Content with vertical lines */}
         <div className="content-with-lines">
-          <article className="blog-post">
-            <div className="blog-post-container">
+          <section className="CalloutSection_section___KRUc">
+            <div className="CalloutSection_container__evjvR">
+              <article className="blog-post">
               {/* Back to Blog Link */}
               <nav className="blog-post-nav">
                 <Link href="/blog" className="blog-back-link">
@@ -64,8 +64,9 @@ const BlogPost: React.FC<BlogPostProps> = ({ postData }) => {
                 className="blog-post-content"
                 dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
               />
+              </article>
             </div>
-          </article>
+          </section>
         </div>
       </main>
       
