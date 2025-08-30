@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { ContentSummary } from '../../lib/contentService';
 
@@ -41,7 +42,14 @@ const BlogEntry: React.FC<BlogEntryProps> = ({
         </div>
 
         {/* Right Section - Content */}
-        <div className="blog-entry-content-section">
+        <motion.div 
+          className="blog-entry-content-section"
+          initial={{ backgroundColor: 'transparent' }}
+          whileHover={{ 
+            backgroundColor: '#1a1a22',
+            transition: { duration: 0.3, ease: 'easeInOut' }
+          }}
+        >
           <CardHeader className="blog-entry-header">
             <div className="blog-entry-meta">
               {date && (
@@ -61,7 +69,7 @@ const BlogEntry: React.FC<BlogEntryProps> = ({
               <p className="blog-entry-excerpt">{description}</p>
             )}
           </CardContent>
-        </div>
+        </motion.div>
       </Card>
     </Link>
   );

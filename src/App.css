@@ -945,9 +945,14 @@ img {
     min-height: 200px;
 }
 
-.blog-entry-card:hover {
-    background: rgba(130, 130, 148, 0.05);
-    border-color: rgba(130, 130, 148, 0.4);
+.blog-entry-card:hover .blog-entry-content-section {
+    color: #f4f4f6;
+}
+
+.blog-entry-card:hover .blog-entry-meta,
+.blog-entry-card:hover .blog-entry-title,
+.blog-entry-card:hover .blog-entry-excerpt {
+    color: #f4f4f6;
 }
 
 /* Left Section - Image */
@@ -969,9 +974,6 @@ img {
     transition: transform 0.2s ease;
 }
 
-.blog-entry-card:hover .blog-entry-img {
-    transform: scale(1.02);
-}
 
 /* Right Section - Content */
 .blog-entry-content-section {
