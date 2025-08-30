@@ -27,7 +27,7 @@ const BlogEntry: React.FC<BlogEntryProps> = ({
 
   return (
     <Link href={`/blog/${id}`} className="block">
-      <Card className={`blog-entry-card ${className}`}>
+      <Card className={`blog-entry-card no-shadow ${className}`}>
         {/* Left Section - Image */}
         <div className="blog-entry-image-section">
           {thumbnail && (
