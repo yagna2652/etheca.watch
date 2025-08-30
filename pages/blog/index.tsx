@@ -1,18 +1,11 @@
 import React from 'react';
-import { GetStaticProps } from 'next';
-import Link from 'next/link';
 import Head from 'next/head';
 import Header from '../../src/components/Header';
 import Footer from '../../src/components/Footer';
 import ScrollProgress from '../../src/components/ScrollProgress';
-import BlogEntry from '../../src/components/BlogEntry';
-import { getSortedContentSummaries, ContentSummary } from '../../lib/contentService';
+import BlogPage from '../../src/pages/BlogPage';
 
-interface BlogIndexProps {
-  allPostsData: ContentSummary[];
-}
-
-const BlogIndex: React.FC<BlogIndexProps> = ({ allPostsData }) => {
+const BlogIndex: React.FC = () => {
   return (
     <>
       <Head>
@@ -27,37 +20,12 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ allPostsData }) => {
           background: 'var(--color-surface-gray)',
           minHeight: '100vh'
         }}>
-          {/* Blog Title Section */}
-          <section className="CalloutSection_section___KRUc">
-            <div className="CalloutSection_container__evjvR">
-              <div className="blog-title-section-inner">
-                <h1 className="blog-title">Blog</h1>
-              </div>
-            </div>
-          </section>
-
-          {/* Blog Entries */}
-          <div className="blog-entries-container">
-            {allPostsData.map((post) => (
-              <BlogEntry key={post.id} {...post} />
-            ))}
-          </div>
-
+          <BlogPage />
         </div>
         <Footer />
       </div>
     </>
   );
-};
-
-export const getStaticProps: GetStaticProps = async () => {
-  const allPostsData = getSortedContentSummaries();
-  
-  return {
-    props: {
-      allPostsData,
-    },
-  };
 };
 
 export default BlogIndex;
