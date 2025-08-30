@@ -11,6 +11,18 @@
 # production
 /build
 
+# Next.js
+/.next/
+/out/
+
+# TypeScript
+*.tsbuildinfo
+
+# Local development files
+.vercel
+contextfiles/
+*.txt
+
 # misc
 .DS_Store
 .env.local

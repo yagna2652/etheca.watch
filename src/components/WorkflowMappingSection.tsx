@@ -3,7 +3,7 @@ const StoryImage = '/images/Story-removebg-preview.png';
 
 const WorkflowMappingSection: React.FC = () => {
   return (
-    <section className="CalloutSection_section___KRUc" style={{ borderTop: '1px solid var(--color-border-grid-alpha-60-white)' }}>
+    <section className="CalloutSection_section___KRUc">
       <div className="CalloutSection_container__evjvR">
         <div className="CalloutSection_callout_container__A2Wzj">
           <div 
@@ -42,7 +42,8 @@ const WorkflowMappingSection: React.FC = () => {
                 alt="Review, Approve, Done - workflow approval process"
                 className="content-image-mobile"
                 style={{
-                  maxWidth: '100%',
+                  width: '100%',
+                  height: 'auto',
                   maxHeight: '320px',
                   objectFit: 'contain',
                   display: 'block'

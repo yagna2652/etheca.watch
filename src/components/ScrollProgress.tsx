@@ -45,11 +45,10 @@ const ScrollProgress: React.FC = () => {
           left: 0,
           right: 0,
           height: '3px',
-          background: 'linear-gradient(90deg, var(--color-primary) 0%, var(--color-accent-foreground) 100%)',
+          backgroundColor: 'rgba(130, 130, 148, 0.8)',
           transformOrigin: '0%',
           transform: `scaleX(${scrollProgress})`,
           zIndex: 1000,
-          boxShadow: '0 0 10px rgba(42, 42, 50, 0.3)',
           transition: 'transform 0.1s ease-out',
         }}
       />

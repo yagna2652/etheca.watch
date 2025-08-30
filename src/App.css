@@ -26,7 +26,7 @@
     --color-border-blue: #e2e6f0;
     --color-border-grid: #828294;
     --color-border-grid-alpha-40-black: color-mix(in srgb, var(--color-border-grid), var(--color-black) 60%);
-    --color-border-grid-alpha-60-white: color-mix(in srgb, var(--color-border-grid), var(--color-white) 40%);
+    --color-border-grid-alpha-60-white: color-mix(in srgb, var(--color-border-grid), var(--color-white) 3%);
     --color-border-grid-alpha-60-black: color-mix(in srgb, var(--color-border-grid), var(--color-black) 40%);
     --color-surface-gray: #f4f4f6;
     --color-surface-dark-gray: #ececf0;
@@ -176,6 +176,55 @@ img {
 
 /* Component Classes */
 
+/* Content with Vertical Lines */
+.content-with-lines {
+    position: relative;
+    width: calc(0.7368055556 * min(var(--vw), var(--layout-max-width)));
+    margin: 0 auto;
+}
+
+.content-with-lines::before,
+.content-with-lines::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: rgba(130, 130, 148, 0.3);
+    pointer-events: none;
+    z-index: 10;
+}
+
+.content-with-lines::before {
+    left: 0;
+}
+
+.content-with-lines::after {
+    right: 0;
+}
+
+@media screen and (max-width: 900px) {
+    .content-with-lines {
+        width: calc(0.9179487179 * min(var(--vw), var(--layout-max-width)));
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .content-with-lines {
+        width: calc(0.95 * min(var(--vw), var(--layout-max-width)));
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .content-with-lines {
+        width: calc(0.98 * min(var(--vw), var(--layout-max-width)));
+    }
+
+    .content-with-lines::before,
+    .content-with-lines::after {
+        display: none;
+    }
+}
 
 /* Hero Section */
 .HeroSection_hero__MpuRV {
@@ -227,8 +276,6 @@ img {
     align-items: center;
     padding-top: calc(var(--spacer-xxl) + var(--header-height));
     padding-bottom: calc(var(--spacer-lg));
-    border-left: 1px solid var(--color-border-grid-alpha-60-white);
-    border-right: 1px solid var(--color-border-grid-alpha-60-white);
 }
 
 @media screen and (max-width: 900px) {
@@ -367,8 +414,6 @@ img {
     margin: 0 auto;
     width: calc((0.7368055556 * min(var(--vw), var(--layout-max-width))));
     position: relative;
-    border-left: 0.5px solid var(--color-border-grid-alpha-60-white);
-    border-right: 0.5px solid var(--color-border-grid-alpha-60-white);
 }
 
 @media screen and (max-width: 900px) {
@@ -469,7 +514,6 @@ img {
 
 .CalloutSection_graphic__DaHKB {
     position: relative;
-    border-left: 0.5px solid var(--color-border-grid-alpha-60-white);
     background-color: var(--color-surface-dark-gray);
 }
 
@@ -528,8 +572,27 @@ img {
     padding-top: var(--section-gap);
     margin: 0 auto;
     position: relative;
-    border-left: 0.5px solid var(--color-border-grid-alpha-60-white);
-    border-right: 0.5px solid var(--color-border-grid-alpha-60-white);
+}
+
+/* Add vertical grey lines to footer */
+.SecuritySection_container__DQLVK::before,
+.SecuritySection_container__DQLVK::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: #666666;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.SecuritySection_container__DQLVK::before {
+    left: 0;
+}
+
+.SecuritySection_container__DQLVK::after {
+    right: 0;
 }
 
 @media screen and (max-width: 900px) {
@@ -550,26 +613,13 @@ img {
         border-left: none;
         border-right: none;
     }
+
+    .SecuritySection_container__DQLVK::before,
+    .SecuritySection_container__DQLVK::after {
+        display: none;
+    }
 }
 
-.SecuritySection_container__DQLVK:after,
-.SecuritySection_container__DQLVK:before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100vw;
-    height: 0.5px;
-    background-color: var(--color-border-grid-alpha-60-white);
-}
-
-.SecuritySection_container__DQLVK:before {
-    top: calc(var(--section-gap) - 0.5px);
-}
-
-.SecuritySection_container__DQLVK:after {
-    bottom: 0;
-}
 
 .SecuritySection_content__riStQ {
     display: flex;
@@ -749,22 +799,24 @@ img {
     }
 }
 
-/* Mobile Image Scaling */
+/* Mobile Image Scaling - Removed transform scaling */
 .mobile-image-scale {
-    transition: transform 0.3s ease;
+    transition: max-width 0.3s ease, max-height 0.3s ease;
+    max-width: 100%;
+    object-fit: contain;
 }
 
 @media screen and (max-width: 768px) {
     .mobile-image-scale {
-        transform: scale(0.85);
-        transform-origin: center;
+        max-width: 85%;
+        margin: 0 auto;
     }
 }
 
 @media screen and (max-width: 480px) {
     .mobile-image-scale {
-        transform: scale(0.75);
-        transform-origin: center;
+        max-width: 75%;
+        margin: 0 auto;
     }
 }
 
@@ -785,36 +837,53 @@ img {
     }
 }
 
-/* Content Images Mobile Scaling */
+/* Content Images Mobile Scaling - Using natural sizing instead of transform */
 .content-image-mobile {
-    transition: max-height 0.3s ease, transform 0.3s ease;
+    transition: max-height 0.3s ease, max-width 0.3s ease;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
 @media screen and (max-width: 768px) {
     .content-image-mobile {
         max-height: 260px !important;
-        transform: scale(0.9);
-        transform-origin: center;
+        max-width: 90%;
+        margin: 0 auto;
+        display: block;
     }
 }
 
 @media screen and (max-width: 480px) {
     .content-image-mobile {
         max-height: 200px !important;
-        transform: scale(0.8);
-        transform-origin: center;
+        max-width: 85%;
+        margin: 0 auto;
+        display: block;
     }
 }
 
-/* Mobile Image Container Adjustments */
+/* Mobile Image Container Adjustments - Enhanced for better alignment */
 @media screen and (max-width: 768px) {
     .CalloutSection_graphic__DaHKB > div {
-        padding: 16px !important;
+        padding: 20px !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 300px;
     }
 }
 
 @media screen and (max-width: 480px) {
     .CalloutSection_graphic__DaHKB > div {
+        padding: 16px !important;
+        min-height: 250px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .CalloutSection_graphic__DaHKB > div {
         padding: 12px !important;
+        min-height: 200px;
     }
 }

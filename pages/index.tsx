@@ -22,10 +22,12 @@ export default function Home() {
       </Head>
       <div className="App">
         <Header />
-        <AutomationHero />
-        <InvisibleHandSection />
-        <IntegrationsShowcase />
-        <WorkflowMappingSection />
+        <div className="content-with-lines">
+          <AutomationHero />
+          <InvisibleHandSection />
+          <IntegrationsShowcase />
+          <WorkflowMappingSection />
+        </div>
         <Footer />
       </div>
     </>

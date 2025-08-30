@@ -165,7 +165,7 @@
   --color-border-blue: #e2e6f0;
   --color-border-grid: #828294;
   --color-border-grid-alpha-40-black: color-mix(in srgb, var(--color-border-grid), var(--color-black) 60%);
-  --color-border-grid-alpha-60-white: color-mix(in srgb, var(--color-border-grid), var(--color-white) 40%);
+  --color-border-grid-alpha-60-white: color-mix(in srgb, var(--color-border-grid), var(--color-white) 3%);
   --color-border-grid-alpha-60-black: color-mix(in srgb, var(--color-border-grid), var(--color-black) 40%);
   --color-surface-gray: #f4f4f6;
   --color-surface-dark-gray: #ececf0;

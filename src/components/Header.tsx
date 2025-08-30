@@ -12,7 +12,7 @@ const Header: React.FC = () => {
         width: '100%',
         height: '80px',
         background: 'var(--color-surface-gray)',
-        borderBottom: '1px solid var(--color-border-grid-alpha-60-white)',
+        borderBottom: '1px solid rgba(130, 130, 148, 0.3)',
         backdropFilter: 'blur(8px)'
       }}
     >

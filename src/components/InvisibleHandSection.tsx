@@ -3,7 +3,7 @@ const InvisibleHandImage = '/images/Invisible-hand-removebg-preview.png';
 
 const InvisibleHandSection: React.FC = () => {
   return (
-    <section style={{ borderTop: '1px solid var(--color-border-grid-alpha-60-white)', position: 'relative' }}>
+    <section style={{ position: 'relative' }}>
       <div className="CalloutSection_section___KRUc" style={{ position: 'relative' }}>
         <div className="CalloutSection_container__evjvR">
           <div className="CalloutSection_callout_container__A2Wzj">
@@ -43,7 +43,8 @@ const InvisibleHandSection: React.FC = () => {
                   alt="The invisible hand that updates your data"
                   className="content-image-mobile"
                   style={{
-                    maxWidth: '100%',
+                    width: '100%',
+                    height: 'auto',
                     maxHeight: '320px',
                     objectFit: 'contain',
                     display: 'block'

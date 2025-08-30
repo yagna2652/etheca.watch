@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="SecuritySection_section__dbHHJ" style={{background: 'var(--color-text-black)', borderTop: '1px solid var(--color-border-grid-alpha-60-white)'}}>
+    <footer className="SecuritySection_section__dbHHJ" style={{background: 'var(--color-text-black)'}}>
       <div className="SecuritySection_container__DQLVK">
         <div className="SecuritySection_content__riStQ" style={{padding: '80px 60px', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
           <h2 

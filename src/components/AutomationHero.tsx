@@ -36,7 +36,7 @@ const AutomationHero: React.FC = () => {
         <div className="HeroSection_top__SlNTc">
           <div className="HeroSection_content__Z3NWj">
             <h1 className="HeroSection_title__r1ung FeaturesSection_heading_1__Tp9Oi">
-              The end of manual data entry.
+              The end of manual data entry
             </h1>
             <p className="HeroSection_description__qiMon">
               We just observe how you work and then update your system of records accordingly
