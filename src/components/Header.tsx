@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
-const EthecaLogo = '/images/Etheca Connect Dots.png';
+const EthecaLogo = "/images/Etheca-logo.png";
 
 const Header: React.FC = () => {
   return (
@@ -64,8 +64,33 @@ const Header: React.FC = () => {
           </a>
         </div>
 
-        {/* Action Buttons */}
-        <div style={{ display: 'flex', alignItems: 'center' }}>
+        {/* Navigation and Action Buttons */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacer-xl)' }}>
+          {/* Blog Navigation Link */}
+          <a 
+            href="/blog" 
+            style={{ 
+              textDecoration: 'none',
+              color: 'var(--color-text-black)',
+              fontFamily: 'var(--font-primary)',
+              fontSize: '16px',
+              fontWeight: '500',
+              padding: '8px 16px',
+              borderRadius: '6px',
+              transition: 'color 0.2s ease, background-color 0.2s ease'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.color = 'var(--color-text-black)';
+              e.currentTarget.style.backgroundColor = 'rgba(130, 130, 148, 0.1)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.color = 'var(--color-text-black)';
+              e.currentTarget.style.backgroundColor = 'transparent';
+            }}
+          >
+            Blog
+          </a>
+          
           <a href="mailto:hello@etheca.watch" style={{ textDecoration: 'none' }}>
             <Button 
               size="default"
