@@ -937,6 +937,15 @@ img {
     text-align: left;
 }
 
+.blog-horizontal-divider {
+    position: absolute;
+    left: calc(50% - (0.7368055556 * min(var(--vw), var(--layout-max-width))) / 2);
+    right: calc(50% - (0.7368055556 * min(var(--vw), var(--layout-max-width))) / 2);
+    height: 1px;
+    background-color: rgba(130, 130, 148, 0.3);
+    margin-top: 80px;
+}
+
 .blog-title {
     font-family: var(--font-primary);
     font-size: 64px;

@@ -31,6 +31,7 @@ const BlogIndex: React.FC<BlogIndexProps> = ({ allPostsData }) => {
             <div className="CalloutSection_container__evjvR">
               <div className="blog-title-section-inner">
                 <h1 className="blog-title">Blog</h1>
+                <div className="blog-horizontal-divider"></div>
               </div>
             </div>
           </section>
