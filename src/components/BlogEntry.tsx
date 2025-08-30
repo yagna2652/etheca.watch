@@ -27,7 +27,11 @@ const BlogEntry: React.FC<BlogEntryProps> = ({
 
   return (
     <Link href={`/blog/${id}`} className="block">
-      <Card className={`blog-entry-card no-shadow ${className}`}>
+      <motion.div 
+        className={`blog-entry-card no-shadow ${className}`}
+        whileHover="hover"
+        initial="initial"
+      >
         {/* Left Section - Image */}
         <div className="blog-entry-image-section">
           {thumbnail && (
@@ -44,10 +48,12 @@ const BlogEntry: React.FC<BlogEntryProps> = ({
         {/* Right Section - Content */}
         <motion.div 
           className="blog-entry-content-section"
-          initial={{ backgroundColor: 'transparent' }}
-          whileHover={{ 
-            backgroundColor: '#1a1a22',
-            transition: { duration: 0.3, ease: 'easeInOut' }
+          variants={{
+            initial: { backgroundColor: 'transparent' },
+            hover: { 
+              backgroundColor: '#1a1a22',
+              transition: { duration: 0.3, ease: 'easeInOut' }
+            }
           }}
         >
           <CardHeader className="blog-entry-header">
@@ -70,7 +76,7 @@ const BlogEntry: React.FC<BlogEntryProps> = ({
             )}
           </CardContent>
         </motion.div>
-      </Card>
+      </motion.div>
     </Link>
   );
 };

@@ -1,9 +1,9 @@
 ---
-title: "Introducing Etheca.Watch: The End of Manual Data Entry"
-date: "2024-12-15"
+title: "Introducing Etheca"
+date: "2025-08-30"
 description: "Discover how Etheca.Watch's AI-powered automation platform transforms workflow management by eliminating tedious manual data entry tasks."
 author: "Etheca Team"
-thumbnail: "/images/Etheca Connect Dots.png"
+thumbnail: "/images/Etheca-blog.png"
 ---
 
 # The Future of Workflow Automation is Here

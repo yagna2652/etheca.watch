@@ -965,11 +965,12 @@ img {
 /* Left Section - Image */
 .blog-entry-image-section {
     border-right: 1px solid rgba(130, 130, 148, 0.3);
+    height: 200px;
 }
 
 .blog-entry-image {
-    width: 100%;
-    height: 100%;
+    width: 300px;
+    height: 200px;
     overflow: hidden;
     border-radius: 0;
 }
@@ -977,7 +978,7 @@ img {
 .blog-entry-img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     transition: transform 0.2s ease;
 }
 
@@ -1077,7 +1078,7 @@ img {
 
 /* Blog Title Section - Clean title without vertical lines */
 .blog-title-section-inner {
-    padding: 0;
+    padding: 0 56px;
     text-align: left;
 }
 

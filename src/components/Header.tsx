@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
-const EthecaLogo = '/images/Etheca Connect Dots.png';
+const EthecaLogo = "/images/Etheca-logo.png";
 
 const Header: React.FC = () => {
   return (
