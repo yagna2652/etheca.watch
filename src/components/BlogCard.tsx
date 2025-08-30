@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 interface BlogPost {
   id: string;
@@ -14,15 +15,30 @@ interface BlogCardProps {
 }
 
 const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
+  // Format date nicely
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+  };
+
   return (
-    <article 
-      className="absolute w-[350px] h-auto border-b border-gray-200 transition-all duration-[0.4s] ease-[ease] bg-white shadow-sm rounded-lg overflow-hidden"
-      style={{ 
-        fontSize: '16px',
-        transform: 'scale(1)',
-        zoom: '1'
-      }}
-    >
+    <Link href={`/blog/${post.id}`} className="block">
+      <article 
+        className="absolute border border-gray-200 transition-all duration-[0.4s] ease-[ease] bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg cursor-pointer"
+        style={{ 
+          width: '350px',
+          height: 'auto',
+          fontSize: '16px',
+          zoom: '1',
+          zIndex: 10,
+          top: '0px', // Default position
+          left: '0px' // Default position
+        }}
+      >
       {post.image && (
         <img 
           src={post.image} 
@@ -42,7 +58,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
             fontSize: '14px'
           }}
         >
-          {post.date}
+          {formatDate(post.date)}
         </p>
         <h2 
           className="text-xl font-semibold mb-3 text-gray-900"
@@ -63,7 +79,8 @@ const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
           {post.description}
         </p>
       </div>
-    </article>
+      </article>
+    </Link>
   );
 };
 

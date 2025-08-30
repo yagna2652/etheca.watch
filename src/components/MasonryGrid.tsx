@@ -23,14 +23,24 @@ const MasonryGrid: React.FC<MasonryGridProps> = ({ posts }) => {
     activeFilter === 'all' || post.category === activeFilter
   );
 
-  const columnCount = useMasonryLayout(gridRef, filteredPosts, 350, 20);
+  // Extract unique categories from posts, with fallback categories
+  const extractedCategories = Array.from(new Set(posts.map(post => post.category))).filter(Boolean);
+  const categories = extractedCategories.length > 1 
+    ? ['all', ...extractedCategories]
+    : ['all', 'general'];
+  const cardWidth = 350;
+  const gap = 20;
+  const staticColumnCount = 3; // Fixed column count
+  const fixedGridWidth = staticColumnCount * cardWidth + (staticColumnCount - 1) * gap; // 1090px
 
-  const categories = ['all', 'ai', 'dev', 'design'];
+  // Call layout hook with static column count
+  useMasonryLayout(gridRef, filteredPosts, cardWidth, gap, staticColumnCount);
 
   return (
     <div 
-      className="w-full"
       style={{ 
+        width: `${fixedGridWidth}px`,
+        margin: '0 auto',
         fontSize: '16px',
         transform: 'scale(1)',
         zoom: '1'
@@ -61,18 +71,26 @@ const MasonryGrid: React.FC<MasonryGridProps> = ({ posts }) => {
         className="relative w-full"
         style={{ minHeight: '400px' }}
       >
-        {filteredPosts.map(post => (
-          <BlogCard key={post.id} post={post} />
-        ))}
-        
-        {Array.from({ length: Math.max(0, columnCount - 1) }).map((_, index) => (
+        {/* Render the vertical lines FIRST */}
+        {Array.from({ length: staticColumnCount - 1 }).map((_, index) => (
           <div
-            key={`vertical-line-${index}`}
-            className="absolute top-0 w-px bg-gray-200 h-full"
+            key={`line-${index}`}
+            className="vertical-grid-line"
             style={{
-              left: `${(350 + 20) * (index + 1) - (20 / 2)}px`
+              position: 'absolute',
+              left: `${(index + 1) * (cardWidth + gap) - gap / 2}px`,
+              top: 0,
+              width: '1px',
+              height: '100%',
+              backgroundColor: '#e5e7eb', // gray-200
+              zIndex: 1
             }}
           />
+        ))}
+
+        {/* Then render the posts */}
+        {filteredPosts.map(post => (
+          <BlogCard key={post.id} post={post} />
         ))}
       </div>
     </div>

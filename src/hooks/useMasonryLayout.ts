@@ -13,36 +13,45 @@ const useMasonryLayout = (
   gridRef: RefObject<HTMLDivElement>,
   filteredPosts: BlogPost[],
   cardWidth: number = 350,
-  gap: number = 20
+  gap: number = 20,
+  staticColumnCount?: number
 ) => {
   const [columnCount, setColumnCount] = useState<number>(0);
   const calculateLayout = useCallback(() => {
-    if (!gridRef.current) return;
+    const grid = gridRef.current;
+    if (!grid) return;
 
-    const container = gridRef.current;
-    const containerWidth = container.offsetWidth;
-    const numColumns = Math.floor(containerWidth / (cardWidth + gap));
+    const effectiveCardWidth = cardWidth + gap; // The card's width plus its right-side gap
     
-    if (numColumns <= 0) return;
+    // Use static column count if provided, otherwise calculate dynamically
+    const columnCount = staticColumnCount || Math.floor((grid.offsetWidth + gap) / effectiveCardWidth);
+    const columnHeights = Array(columnCount).fill(0);
+    const children = Array.from(grid.children) as HTMLElement[];
+    
+    if (columnCount <= 0) return;
 
-    setColumnCount(numColumns);
+    setColumnCount(columnCount);
 
-    const columnHeights = Array(numColumns).fill(0);
-    const cards = container.querySelectorAll('article');
+    children.forEach((child, index) => {
+      // Make sure we only position blog cards, not vertical lines
+      if (child.tagName === 'ARTICLE') {
+        const shortestColumnIndex = columnHeights.indexOf(Math.min(...columnHeights));
+        const top = columnHeights[shortestColumnIndex];
+        
+        // Update the left calculation with proper gap
+        const left = shortestColumnIndex * effectiveCardWidth;
 
-    cards.forEach((card: Element) => {
-      const htmlCard = card as HTMLElement;
-      const shortestColumnIndex = columnHeights.indexOf(Math.min(...columnHeights));
-      
-      htmlCard.style.left = `${shortestColumnIndex * (cardWidth + gap)}px`;
-      htmlCard.style.top = `${columnHeights[shortestColumnIndex]}px`;
-      
-      columnHeights[shortestColumnIndex] += htmlCard.offsetHeight + gap;
+        child.style.left = `${left}px`;
+        child.style.top = `${top}px`;
+
+        // Update the column height calculation with gap
+        columnHeights[shortestColumnIndex] += child.offsetHeight + gap;
+      }
     });
 
     const maxHeight = Math.max(...columnHeights);
-    container.style.height = `${maxHeight}px`;
-  }, [gridRef, cardWidth, gap]);
+    grid.style.height = `${maxHeight}px`;
+  }, [gridRef, cardWidth, gap, staticColumnCount]);
 
 
   const debouncedCalculateLayout = useCallback(() => {
@@ -56,11 +65,17 @@ const useMasonryLayout = (
   useLayoutEffect(() => {
     const debouncedResize = debouncedCalculateLayout();
     
-    calculateLayout();
+    // Add delay to ensure cards are fully rendered with images
+    const timeoutId = setTimeout(() => {
+      calculateLayout();
+      // Run again after a longer delay to account for image loading
+      setTimeout(calculateLayout, 500);
+    }, 50);
     
     window.addEventListener('resize', debouncedResize);
 
     return () => {
+      clearTimeout(timeoutId);
       window.removeEventListener('resize', debouncedResize);
     };
   }, [filteredPosts, calculateLayout, debouncedCalculateLayout]);

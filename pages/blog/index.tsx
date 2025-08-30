@@ -1,11 +1,17 @@
 import React from 'react';
+import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Header from '../../src/components/Header';
 import Footer from '../../src/components/Footer';
 import ScrollProgress from '../../src/components/ScrollProgress';
 import BlogPage from '../../src/pages/BlogPage';
+import { getSortedContentSummaries, ContentSummary } from '../../lib/contentService';
 
-const BlogIndex: React.FC = () => {
+interface BlogIndexProps {
+  allPostsData: ContentSummary[];
+}
+
+const BlogIndex: React.FC<BlogIndexProps> = ({ allPostsData }) => {
   return (
     <>
       <Head>
@@ -20,12 +26,22 @@ const BlogIndex: React.FC = () => {
           background: 'var(--color-surface-gray)',
           minHeight: '100vh'
         }}>
-          <BlogPage />
+          <BlogPage posts={allPostsData} />
         </div>
         <Footer />
       </div>
     </>
   );
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  const allPostsData = getSortedContentSummaries();
+  
+  return {
+    props: {
+      allPostsData,
+    },
+  };
 };
 
 export default BlogIndex;
