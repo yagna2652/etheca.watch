@@ -1,73 +1,6 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
-    --radius: 0.5rem;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-  }
-
-  .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-}
 
 /* Covik Sans Font Implementation */
 @font-face {
@@ -142,222 +75,43 @@
   font-display: swap;
 }
 
-/* CSS Variables */
-:root {
-  /* Layout Variables */
-  --vw: 100vw;
-  --vh: 100vh;
-  --ivh: 100vh;
-  --rem: 1px;
-  --layout-max-width: 1920px;
-  --layout-margin: 80px;
-  --layout-min-max: min(var(--vw), var(--layout-max-width));
-  --header-height: 70px;
-  
-  /* Spacing System - Mathematical Grid (Rule 10) */
-  --spacer-xs: 4px;
-  --spacer-sm: 8px;
-  --spacer-md: 16px;
-  --spacer-lg: 24px;
-  --spacer-xl: 32px;
-  --spacer-xxl: 48px;
-  --spacer-xxxl: 64px;
-  --block-gap: 80px;
-  --section-gap: 96px;
-  
-  /* Color System - Following Design Rules 1-7 */
-  --color-black-absolute: #0f0f11;
-  --color-white-absolute: #f2f2f4;
-  --color-white: var(--color-white-absolute);
-  --color-black: #181820;
-  --color-blue: #0a33ff;
-  --color-grey: #787885;
-  --color-border-blue: #e2e6f0;
-  --color-border-grid: #828294;
-  --color-border-grid-alpha-40-black: color-mix(in srgb, var(--color-border-grid), var(--color-black) 60%);
-  --color-border-grid-alpha-60-white: color-mix(in srgb, var(--color-border-grid), var(--color-white) 3%);
-  --color-border-grid-alpha-60-black: color-mix(in srgb, var(--color-border-grid), var(--color-black) 40%);
-  --color-surface-gray: #f4f4f6;
-  --color-surface-dark-gray: #ececf0;
-  --color-text-white: #f4f4f6;
-  --color-text-white-alpha-70: color-mix(in srgb, var(--color-text-white), var(--color-black) 30%);
-  --color-text-white-alpha-90: color-mix(in srgb, var(--color-text-white), var(--color-black) 10%);
-  --color-text-black: #1a1a22;
-  --color-text-black-alpha-50: color-mix(in srgb, var(--color-text-black), var(--color-white) 50%);
-  --color-text-black-alpha-65: color-mix(in srgb, var(--color-text-black), var(--color-white) 35%);
-  --color-text-black-alpha-70: color-mix(in srgb, var(--color-text-black), var(--color-white) 30%);
-  
-  /* Font System - Covik Sans Only */
-  --font-primary: 'Covik Sans';
-  --font-sans: 'Covik Sans';
-  --font-mono: 'Covik Sans';
-  --font-eiko: 'Covik Sans';
-  --font-neue-montreal: 'Covik Sans';
-  --font-atacama: 'Covik Sans';
-  
-  /* Grid System */
-  --column-count: 12;
-  
-  /* Font Sizes - Rule 17: Body text 16px minimum */
-  --text-xs: 0.875rem;
-  --text-sm: 1rem;
-  --text-base: 1rem;
-  --text-lg: 1.125rem;
-  --text-xl: 1.25rem;
-  --text-2xl: 1.5rem;
-  --text-3xl: 1.875rem;
-  --text-4xl: 2.25rem;
-  --text-5xl: 3rem;
-  
-}
+@layer base {
 
-/* Responsive adjustments */
-@media screen and (max-width: 900px) {
   :root {
-    --column-count: 6;
-    --layout-margin: 16px;
-    --section-gap: 90px;
-    --block-gap: 60px;
+    --background: 0 0% 9.4%; /* #181818 */
+    --foreground: 210 40% 98%;
+    --card: 0 0% 9.4%; /* #181818 */
+    --card-foreground: 210 40% 98%;
+    --popover: 0 0% 9.4%; /* #181818 */
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
   }
 }
 
-/* Base styles */
-body {
-  font-family: var(--font-primary);
-  letter-spacing: -0.04em;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: var(--color-black);
-  background-color: var(--color-surface-gray);
-  width: 100%;
-  height: auto;
-  margin: 0;
-  overscroll-behavior: none;
-  max-width: 100vw;
-  min-height: 100vh;
-  position: relative;
-  padding: 0;
-  overflow-x: hidden;
-}
-
-html {
-  overflow: visible;
-  position: relative;
-  min-height: 100%;
-  font-size: 16px;
-  color: var(--color-black);
-  background: var(--color-surface-gray);
-  scroll-behavior: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-html::-webkit-scrollbar {
-  width: 0px;
-  background: transparent;
-}
-
-body::-webkit-scrollbar {
-  display: none;
-}
-
-@media screen and (max-width: 768px) {
+@layer base {
+  * {
+    @apply border-border;
+  }
   body {
-    -webkit-text-size-adjust: 100%;
+    @apply bg-background text-foreground;
+    font-family: "Covik Sans", sans-serif;
   }
 }
 
-/* Reset and base element styles */
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  text-rendering: optimizelegibility;
-  text-rendering: geometricprecision;
-  font-feature-settings: "liga", "clig off";
-  font-variant-ligatures: no-common-ligatures;
-  -moz-osx-font-smoothing: grayscale;
-  -moz-font-smoothing: antialiased;
-  -webkit-font-smoothing: antialiased;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  -webkit-touch-callout: none;
-}
-
-/* Typography Reset with Covik Sans */
-figure, h1, h2, h3, h4, h5, h6, p {
-  font-family: var(--font-primary);
-  font-size: inherit;
-  letter-spacing: inherit;
-  font-weight: 400;
-  margin: 0;
-}
-
-a, button {
-  cursor: pointer;
-  font-family: var(--font-primary);
-  font-weight: inherit;
-  text-decoration: none;
-  color: inherit;
-  letter-spacing: inherit;
-}
-
-button {
-  margin-top: 0;
-  margin-bottom: 0;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: none;
-  display: block;
-  cursor: pointer;
-  background: rgba(0, 0, 0, 0);
-  padding: 0;
-  color: inherit;
-  font-family: var(--font-primary);
-  line-height: inherit;
-  text-align: inherit;
-  text-transform: inherit;
-  font-size: inherit;
-}
-
-ol, ul {
-  padding: 0;
-  margin: 0;
-}
-
-ol li, ul li {
-  list-style-type: none;
-}
-
-img {
-  display: block;
-}
-
-code {
-  font-family: 'Covik Sans', source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-}
-
-/* Utility classes */
-.font-covik {
-  font-family: var(--font-primary);
-}
-
-.font-covik-medium {
-  font-family: var(--font-primary);
-  font-weight: 500;
-}
-
-.font-covik-semibold {
-  font-family: var(--font-primary);
-  font-weight: 600;
-}
-
-.font-covik-bold {
-  font-family: var(--font-primary);
-  font-weight: 700;
-}
-
-.font-covik-black {
-  font-family: var(--font-primary);
-  font-weight: 900;
-}

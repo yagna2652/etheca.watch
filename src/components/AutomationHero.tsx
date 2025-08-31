@@ -1,65 +1,44 @@
+"use client"
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 
 const AutomationHero: React.FC = () => {
-
-
   return (
-    <section className="HeroSection_hero__MpuRV" style={{ position: 'relative' }}>
+    <section className="relative min-h-[calc(100vh-4rem)] flex items-center justify-center overflow-hidden border-l border-r container mx-auto">
       {/* Grid Background */}
-      <div
+      <div 
+        className="absolute inset-0 opacity-80"
         style={{
-          position: 'absolute',
-          inset: 0,
-          backgroundSize: '20px 20px',
+          backgroundSize: '24px 24px',
+          backgroundPosition: '12px 12px',
           backgroundImage: `
-            linear-gradient(to right, rgba(224, 224, 229, 0.3) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(224, 224, 229, 0.3) 1px, transparent 1px)
+            linear-gradient(to right, hsl(var(--border)) 1px, transparent 1px),
+            linear-gradient(to bottom, hsl(var(--border)) 1px, transparent 1px)
           `,
-          zIndex: 1,
+          maskImage: 'radial-gradient(ellipse at center, white, transparent 70%)'
         }}
       />
-      {/* Radial gradient overlay for faded effect */}
-      <div
-        style={{
-          position: 'absolute',
-          inset: 0,
-          background: 'var(--color-surface-gray)',
-          WebkitMask: 'radial-gradient(ellipse at center, transparent 20%, black)',
-          mask: 'radial-gradient(ellipse at center, transparent 20%, black)',
-          pointerEvents: 'none',
-          zIndex: 2,
-        }}
-      />
-      <div className="HeroSection_container__z36V8" style={{ position: 'relative', zIndex: 3 }}>
-        <div className="HeroSection_top__SlNTc">
-          <div className="HeroSection_content__Z3NWj">
-            <h1 className="HeroSection_title__r1ung FeaturesSection_heading_1__Tp9Oi">
+      
+      <div className="relative z-10 px-6 md:px-8 py-24 md:py-32 w-full">
+        <div className="flex flex-col items-center text-center space-y-8 max-w-4xl mx-auto">
+          <div className="space-y-6">
+            <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tighter leading-tight">
               The end of manual data entry
             </h1>
-            <p className="HeroSection_description__qiMon">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed tracking-wide">
               We just observe how you work and then update your system of records accordingly
             </p>
-            <div className="HeroSection_button_container__RfDt0">
-              <HoverBorderGradient
-                containerClassName=""
-                as="button"
-                onClick={() => window.open('mailto:hello@etheca.watch', '_blank')}
-                className="bg-white dark:bg-white text-black dark:text-black flex items-center justify-center"
-                style={{
-                  borderRadius: '8px',
-                  fontFamily: 'var(--font-primary)',
-                  cursor: 'pointer',
-                  padding: '16px 32px',
-                  fontSize: '16px',
-                  fontWeight: '500',
-                  minHeight: '48px',
-                }}
-              >
-                Contact Us
-              </HoverBorderGradient>
-            </div>
+          </div>
+          
+          <div className="pt-4">
+            <Button 
+              size="lg" 
+              className="text-lg px-8 py-6 h-auto"
+              onClick={() => window.open('mailto:hello@etheca.watch', '_blank')}
+            >
+              Contact Us
+            </Button>
           </div>
         </div>
       </div>
