@@ -8,6 +8,13 @@ import html from 'remark-html';
 const postsDirectory = path.join(process.cwd(), '_posts');
 
 // TypeScript interfaces
+export interface Author {
+  name: string;
+  avatar?: string;
+  bio?: string;
+  twitter?: string;
+}
+
 export interface ContentSummary {
   id: string;
   title: string;
@@ -15,6 +22,9 @@ export interface ContentSummary {
   description?: string;
   thumbnail?: string;
   author?: string;
+  category?: string;
+  tags?: string[];
+  published?: boolean;
 }
 
 export interface ContentData extends ContentSummary {
@@ -24,7 +34,10 @@ export interface ContentData extends ContentSummary {
 /**
  * Get all content summaries sorted by date (newest first)
  */
-export function getSortedContentSummaries(): ContentSummary[] {
+export function getSortedContentSummaries(options?: { 
+  includeUnpublished?: boolean;
+  category?: string;
+}): ContentSummary[] {
   // Get file names under /_posts
   const fileNames = fs.readdirSync(postsDirectory);
   
@@ -49,11 +62,25 @@ export function getSortedContentSummaries(): ContentSummary[] {
         description: matterResult.data.description,
         thumbnail: matterResult.data.thumbnail,
         author: matterResult.data.author,
+        category: matterResult.data.category || 'general',
+        tags: matterResult.data.tags || [],
+        published: matterResult.data.published !== false, // Default to true
       } as ContentSummary;
     });
 
+  // Filter posts based on options
+  let filteredPosts = allPostsData;
+  
+  if (!options?.includeUnpublished) {
+    filteredPosts = filteredPosts.filter(post => post.published);
+  }
+  
+  if (options?.category) {
+    filteredPosts = filteredPosts.filter(post => post.category === options.category);
+  }
+
   // Sort posts by date
-  return allPostsData.sort((a, b) => {
+  return filteredPosts.sort((a, b) => {
     if (a.date < b.date) {
       return 1;
     } else {
@@ -105,5 +132,32 @@ export async function getContentData(id: string): Promise<ContentData> {
     description: matterResult.data.description,
     thumbnail: matterResult.data.thumbnail,
     author: matterResult.data.author,
+    category: matterResult.data.category || 'general',
+    tags: matterResult.data.tags || [],
+    published: matterResult.data.published !== false,
   } as ContentData;
+}
+
+/**
+ * Get all unique categories from posts
+ */
+export function getAllCategories(): string[] {
+  const posts = getSortedContentSummaries();
+  const categories = posts
+    .map(post => post.category)
+    .filter((category): category is string => !!category);
+  
+  return Array.from(new Set(categories)).sort();
+}
+
+/**
+ * Get all unique tags from posts
+ */
+export function getAllTags(): string[] {
+  const posts = getSortedContentSummaries();
+  const allTags = posts
+    .flatMap(post => post.tags || [])
+    .filter(tag => !!tag);
+  
+  return Array.from(new Set(allTags)).sort();
 }

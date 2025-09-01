@@ -4,6 +4,9 @@ date: "2025-08-30"
 description: "Discover how Etheca.Watch's AI-powered automation platform transforms workflow management by eliminating tedious manual data entry tasks."
 author: "Etheca Team"
 thumbnail: "/images/Etheca-blog.png"
+category: "product"
+tags: ["automation", "AI", "workflow", "productivity"]
+published: true
 ---
 
 # The Future of Workflow Automation is Here

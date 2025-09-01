@@ -1,5 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+import { formatDate } from '../../lib/utils';
+import { CustomSeparator } from '@/components/ui/custom-separator';
 
 interface BlogPost {
   id: string;
@@ -8,6 +11,7 @@ interface BlogPost {
   image?: string;
   date: string;
   category: string;
+  author?: string;
 }
 
 interface FeaturedPostProps {
@@ -18,145 +22,66 @@ const FeaturedPost: React.FC<FeaturedPostProps> = ({ post }) => {
   // Default fallback content if no post provided
   if (!post) {
     return (
-      <article 
-        style={{ 
-          width: '100%',
-          marginBottom: '48px',
-          padding: '24px',
-          backgroundColor: 'white',
-          borderRadius: '8px',
-          boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-          fontSize: '16px',
-          transform: 'scale(1)',
-          zoom: '1',
-          border: '1px solid #e5e7eb'
-        }}
-      >
-        <h1 
-          style={{ 
-            fontSize: '48px',
-            fontWeight: 'bold',
-            marginBottom: '24px',
-            color: '#111827',
-            lineHeight: '1.2',
-            fontFamily: 'inherit'
-          }}
-        >
+      <article className="w-full flex flex-col items-center justify-center p-8 sm:p-12 rounded-lg border mb-12" style={{ backgroundColor: '#ffffff', borderColor: 'rgba(130, 130, 148, 0.3)' }}>
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 text-center mb-6">
           Welcome to Our Blog
         </h1>
-        <p 
-          style={{ 
-            fontSize: '20px',
-            color: '#374151',
-            lineHeight: '1.6',
-            fontFamily: 'inherit'
-          }}
-        >
+        <p className="text-lg sm:text-xl text-gray-600 text-center max-w-3xl">
           Discover insights, tutorials, and updates from our team.
         </p>
       </article>
     );
   }
 
-  // Format date nicely
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
-  };
-
   return (
-    <Link href={`/blog/${post.id}`} className="block">
-      <article 
-        className="hover:shadow-md transition-shadow cursor-pointer overflow-hidden"
-        style={{ 
-          width: '1090px',
-          margin: '0 auto 64px auto',
-          backgroundColor: 'white',
-          borderRadius: '12px',
-          boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
-          fontSize: '16px',
-          border: '1px solid #e2e8f0',
-          display: 'flex',
-          minHeight: '320px'
-        }}
-      >
-        {/* Left side - Image */}
+    <Link href={`/blog/${post.id}`} className="block mb-12">
+      <article className="w-full cursor-pointer overflow-hidden flex flex-col lg:flex-row items-center gap-6 sm:gap-8 p-6 sm:p-8 rounded-lg border transition-colors duration-200" style={{ backgroundColor: '#ffffff', borderColor: 'rgba(130, 130, 148, 0.3)' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(244, 244, 246, 0.5)'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#ffffff'}>
+        {/* Image Section */}
         {post.image && (
-          <div style={{ 
-            width: '25%', 
-            minHeight: '320px', 
-            overflow: 'hidden',
-            borderTopLeftRadius: '12px',
-            borderBottomLeftRadius: '12px'
-          }}>
-            <img 
-              src={post.image} 
-              alt={post.title}
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover'
-              }}
-            />
+          <div className="w-full lg:w-1/2">
+            <div className="aspect-video">
+              <Image
+                src={post.image}
+                alt={post.title}
+                width={600}
+                height={338}
+                className="w-full h-full object-cover rounded-lg"
+                priority
+              />
+            </div>
           </div>
         )}
         
-        {/* Right side - Content */}
-        <div style={{ 
-          width: post.image ? '75%' : '100%',
-          padding: '48px 40px',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center'
-        }}>
-          <p 
-            style={{ 
-              fontSize: '13px',
-              color: '#64748b',
-              marginBottom: '16px',
-              fontFamily: 'inherit',
-              fontWeight: '500',
-              textTransform: 'uppercase',
-              letterSpacing: '0.1em'
-            }}
-          >
+        {/* Vertical Separator - Hidden on mobile */}
+        <div className="hidden lg:block">
+          <CustomSeparator orientation="vertical" />
+        </div>
+        
+        {/* Content Section */}
+        <div className="w-full lg:w-1/2 flex flex-col justify-center space-y-3 sm:space-y-4">
+          <p className="text-sm text-gray-500 uppercase tracking-wider font-medium">
             {formatDate(post.date)}
           </p>
-          <h1 
-            style={{ 
-              fontSize: '32px',
-              fontWeight: '700',
-              marginBottom: '20px',
-              color: '#0f172a',
-              lineHeight: '1.2',
-              fontFamily: 'inherit'
-            }}
-          >
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
             {post.title}
           </h1>
-          <p 
-            style={{ 
-              fontSize: '16px',
-              color: '#475569',
-              lineHeight: '1.6',
-              fontFamily: 'inherit',
-              margin: '0 0 24px 0'
-            }}
-          >
+          <p className="text-lg text-gray-600 leading-relaxed">
             {post.description}
           </p>
-          <div style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            fontSize: '14px',
-            color: '#64748b',
-            fontWeight: '500'
-          }}>
-            Read more →
+          <div className="flex items-center justify-between pt-4">
+            <div className="flex items-center space-x-4">
+              {post.author && (
+                <p className="text-sm text-gray-500">
+                  by <span className="font-medium">{post.author}</span>
+                </p>
+              )}
+              <span className="text-xs px-3 py-1 bg-blue-50 text-blue-600 rounded-full uppercase tracking-wider font-medium">
+                {post.category}
+              </span>
+            </div>
+            <div className="flex items-center text-blue-600 font-medium">
+              Read more →
+            </div>
           </div>
         </div>
       </article>
