@@ -53,7 +53,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   return (
     <div className="min-h-screen flex flex-col">
       {/* Header */}
-      <header className="border-b">
+      <header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur-sm">
         <div className="container flex h-16 items-center justify-between">
           <MainNav />
         </div>
