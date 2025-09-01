@@ -21,7 +21,8 @@ export default function BlogEntry({
 }: BlogEntryProps) {
   return (
     <article className="border-b border-border pb-8 mb-8">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="px-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* Thumbnail Image */}
         <div className="md:col-span-1">
           <Link href={`/blog/${id}`}>
@@ -59,6 +60,7 @@ export default function BlogEntry({
           >
             Read more →
           </Link>
+        </div>
         </div>
       </div>
     </article>

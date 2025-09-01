@@ -61,8 +61,8 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
 
       {/* Main Content */}
       <main className="flex-1 relative">
-        <div className="max-w-7xl mx-auto border-l border-r min-h-screen">
-          <div className="max-w-4xl mx-auto px-6 py-16">
+        <div className="max-w-7xl mx-auto min-h-screen">
+          <div className="max-w-4xl mx-auto border-l border-r px-6 py-16">
             <article className="space-y-8">
               <nav className="text-sm">
                 <Link href="/blog" className="text-muted-foreground hover:text-foreground transition-colors">
