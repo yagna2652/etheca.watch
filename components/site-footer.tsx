@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 
-import { HoverBorderGradient } from "@/src/components/ui/hover-border-gradient"
+import { HoverBorderGradient } from "@/components/ui/hover-border-gradient"
 
 export function SiteFooter() {
   return (

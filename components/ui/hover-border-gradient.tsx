@@ -1,58 +1,100 @@
-"use client"
-
-import React, { useState, useRef } from "react"
-import { cn } from "@/lib/utils"
-
-export interface HoverBorderGradientProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  children: React.ReactNode
-  containerClassName?: string
-  className?: string
-  as?: React.ElementType
-  duration?: number
-}
+"use client";
+import React, { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 export function HoverBorderGradient({
   children,
   containerClassName,
   className,
-  as: Tag = "button",
-  duration = 1,
+  as: Tag = "div",
+  duration = 4,
+  clockwise = true,
   ...props
-}: HoverBorderGradientProps) {
-  const [hovered, setHovered] = useState<boolean>(false)
-  const ref = useRef<HTMLElement>(null)
+}: React.PropsWithChildren<
+  {
+    as?: React.ElementType;
+    containerClassName?: string;
+    className?: string;
+    duration?: number;
+    clockwise?: boolean;
+  } & React.HTMLAttributes<HTMLElement>
+>) {
+  const [hovered, setHovered] = useState<boolean>(false);
+  const [rotation, setRotation] = useState<number>(0);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  const getGradientFromRotation = (deg: number): string => {
+    const normalizedDeg = ((deg % 360) + 360) % 360;
+    const x = 50 + 50 * Math.cos((normalizedDeg - 90) * Math.PI / 180);
+    const y = 50 + 50 * Math.sin((normalizedDeg - 90) * Math.PI / 180);
+    return `radial-gradient(20% 40% at ${x}% ${y}%, hsl(0, 0%, 100%) 0%, rgba(255, 255, 255, 0) 100%)`;
+  };
+
+  const highlight =
+    "radial-gradient(75% 181.15942028985506% at 50% 50%, #576c9d 0%, rgba(255, 255, 255, 0) 100%)";
+
+  useEffect(() => {
+    if (!hovered) {
+      const startTime = Date.now();
+      const startRotation = rotation;
+      
+      const animate = () => {
+        const elapsed = Date.now() - startTime;
+        const progress = (elapsed / (duration * 1000)) % 1;
+        const newRotation = startRotation + (clockwise ? 360 : -360) * progress;
+        setRotation(newRotation);
+        
+        intervalRef.current = setTimeout(animate, 16);
+      };
+      
+      intervalRef.current = setTimeout(animate, 16);
+      
+      return () => {
+        if (intervalRef.current) {
+          clearTimeout(intervalRef.current);
+          intervalRef.current = null;
+        }
+      };
+    }
+  }, [hovered, duration, clockwise]);
 
   return (
     <Tag
-      ref={ref}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className={cn(
-        "relative inline-flex h-12 overflow-hidden rounded-full bg-[#f6f6f6] p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50",
+        "relative flex border content-center bg-black/20 hover:bg-black/10 transition duration-500 dark:bg-white/20 items-center flex-col flex-nowrap gap-10 h-min justify-center overflow-hidden p-px decoration-clone w-fit",
         containerClassName
       )}
       {...props}
     >
-      <span
-        className={cn(
-          "absolute inset-0 overflow-hidden rounded-full",
-          hovered ? "opacity-100" : "opacity-0"
-        )}
-        style={{
-          transition: `opacity ${duration}s ease-in-out`,
-        }}
-      >
-        <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-      </span>
-      <span
-        className={cn(
-          "inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl",
-          className
-        )}
+      <div
+        className={cn("w-auto z-10 bg-transparent px-4 py-2 rounded-[inherit]", className)}
       >
         {children}
-      </span>
+      </div>
+      <motion.div
+        className={cn(
+          "flex-none inset-0 overflow-hidden absolute z-0"
+        )}
+        style={{
+          filter: "blur(2px)",
+          position: "absolute",
+          width: "100%",
+          height: "100%",
+          borderRadius: "inherit",
+          overflow: "hidden",
+          clipPath: "inherit",
+        }}
+        animate={{
+          background: hovered
+            ? highlight
+            : getGradientFromRotation(rotation),
+        }}
+        transition={{ ease: "linear", duration: hovered ? 0.2 : 0 }}
+      />
+      <div className="bg-background absolute z-1 flex-none inset-[2px] rounded-[inherit]" />
     </Tag>
-  )
+  );
 }

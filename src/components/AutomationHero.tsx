@@ -1,7 +1,7 @@
 "use client"
 
 import React from 'react';
-import { HoverBorderGradient } from "@/src/components/ui/hover-border-gradient";
+import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 
 const AutomationHero: React.FC = () => {
   return (
