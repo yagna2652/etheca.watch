@@ -1,8 +1,8 @@
 import React from 'react';
-import AutomationHero from '@/src/components/AutomationHero';
-import InvisibleHandSection from '@/src/components/InvisibleHandSection';
-import IntegrationsShowcase from '@/src/components/IntegrationsShowcase';
-import WorkflowMappingSection from '@/src/components/WorkflowMappingSection';
+import AutomationHero from '../../src/components/AutomationHero';
+import InvisibleHandSection from '../../src/components/InvisibleHandSection';
+import IntegrationsShowcase from '../../src/components/IntegrationsShowcase';
+import WorkflowMappingSection from '../../src/components/WorkflowMappingSection';
 
 export const metadata = {
   title: "Etheca - The End of Manual Data Entry",

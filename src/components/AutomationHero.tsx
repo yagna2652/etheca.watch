@@ -1,13 +1,13 @@
 "use client"
 
 import React from 'react';
-import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
+import { HoverBorderGradient } from "../../components/ui/hover-border-gradient";
 
 const AutomationHero: React.FC = () => {
   return (
     <section className="relative min-h-[calc(100vh-4rem)] flex items-center justify-center overflow-hidden">
       {/* Inner Content Container with Vertical Borders */}
-      <div className="w-full flex items-center justify-center relative">
+      <div className="w-full max-w-7xl mx-auto border-l border-r flex items-center justify-center relative">
         {/* Grid Background */}
         <div 
           className="absolute inset-0 opacity-80"
@@ -33,11 +33,12 @@ const AutomationHero: React.FC = () => {
             </p>
           </div>
           
+          
           <div className="pt-4">
             <HoverBorderGradient
               as="button"
               onClick={() => window.open('mailto:hello@etheca.watch', '_blank')}
-              className="bg-background text-foreground flex items-center justify-center"
+              className="flex items-center justify-center"
               containerClassName="rounded-lg"
               style={{
                 padding: '12px 24px',

@@ -22,7 +22,10 @@
     "baseUrl": ".",
     "paths": {
       "@/*": [
-        "./*"
+        "./src/*"
+      ],
+      "contentlayer/generated": [
+        "./.contentlayer/generated"
       ]
     },
     "incremental": true,
@@ -35,6 +38,7 @@
   "include": [
     "**/*.ts",
     "**/*.tsx",
+    ".contentlayer/generated",
     "next-env.d.ts",
     ".next/types/**/*.ts"
   ],
