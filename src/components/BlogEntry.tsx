@@ -1,84 +1,68 @@
-import React from 'react';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
-import { ContentSummary } from '../../lib/contentService';
+import Link from "next/link";
+import Image from "next/image";
+import { format } from "date-fns";
 
-interface BlogEntryProps extends ContentSummary {
-  className?: string;
+interface BlogEntryProps {
+  id: string;
+  title: string;
+  date: string;
+  author: string;
+  description: string;
+  thumbnail: string;
 }
 
-const BlogEntry: React.FC<BlogEntryProps> = ({ 
-  id, 
-  title, 
-  date, 
-  author, 
-  description, 
+export default function BlogEntry({
+  id,
+  title,
+  date,
+  author,
+  description,
   thumbnail,
-  className = "" 
-}) => {
-  const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
-  };
-
+}: BlogEntryProps) {
   return (
-    <Link href={`/blog/${id}`} className="block">
-      <motion.div 
-        className={`blog-entry-card no-shadow ${className}`}
-        whileHover="hover"
-        initial="initial"
-      >
-        {/* Left Section - Image */}
-        <div className="blog-entry-image-section">
-          {thumbnail && (
-            <div className="blog-entry-image">
-              <img 
-                src={thumbnail} 
+    <article className="border-b border-border pb-8 mb-8">
+      <div className="px-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* Thumbnail Image */}
+        <div className="md:col-span-1">
+          <Link href={`/blog/${id}`}>
+            <div className="relative aspect-video overflow-hidden rounded-lg hover:opacity-80 transition-opacity">
+              <Image
+                src={thumbnail}
                 alt={title}
-                className="blog-entry-img"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 33vw"
               />
             </div>
-          )}
+          </Link>
         </div>
 
-        {/* Right Section - Content */}
-        <motion.div 
-          className="blog-entry-content-section"
-          variants={{
-            initial: { backgroundColor: 'transparent' },
-            hover: { 
-              backgroundColor: '#1a1a22',
-              transition: { duration: 0.3, ease: 'easeInOut' }
-            }
-          }}
-        >
-          <CardHeader className="blog-entry-header">
-            <div className="blog-entry-meta">
-              {date && (
-                <time className="blog-entry-date">
-                  {formatDate(date)}
-                </time>
-              )}
-              {author && (
-                <span className="blog-entry-author">by {author}</span>
-              )}
-            </div>
-            <h2 className="blog-entry-title">{title}</h2>
-          </CardHeader>
+        {/* Content */}
+        <div className="md:col-span-2 space-y-4">
+          <Link href={`/blog/${id}`}>
+            <h2 className="text-2xl font-bold hover:text-muted-foreground transition-colors">
+              {title}
+            </h2>
+          </Link>
           
-          <CardContent className="blog-entry-content">
-            {description && (
-              <p className="blog-entry-excerpt">{description}</p>
-            )}
-          </CardContent>
-        </motion.div>
-      </motion.div>
-    </Link>
+          <div className="text-sm text-muted-foreground">
+            {format(new Date(date), "PPP")} • {author}
+          </div>
+          
+          <p className="text-muted-foreground leading-relaxed">
+            {description}
+          </p>
+          
+          <Link 
+            href={`/blog/${id}`}
+            className="inline-flex items-center text-sm font-medium hover:underline"
+          >
+            Read more →
+          </Link>
+        </div>
+        </div>
+      </div>
+    </article>
   );
-};
-
-export default BlogEntry;
+}

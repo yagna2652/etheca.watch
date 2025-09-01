@@ -3,54 +3,26 @@ const WorksWithToolsImage = '/images/workswithyourtools-removebg-preview.png';
 
 const IntegrationsShowcase: React.FC = () => {
   return (
-    <section className="CalloutSection_section___KRUc">
-      <div className="CalloutSection_container__evjvR">
-        <div className="CalloutSection_callout_container__A2Wzj">
-          <div 
-            className="CalloutSection_content__6LL3k"
-            style={{
-              position: 'relative',
-              backgroundSize: '20px 20px',
-              backgroundImage: `
-                linear-gradient(to right, rgba(224, 224, 229, 0.3) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(224, 224, 229, 0.3) 1px, transparent 1px)
-              `,
-            }}
-          >
-            <h2 className="CalloutSection_title__7dfAl FeaturesSection_heading_2__z9mcA">
-              Works with your tools.
-            </h2>
-            <p className="CalloutSection_description__MS245 FeaturesSection_body__S4iJv">
-              We integrate with your favorite CRMs, project management boards, and communication apps to capture updates automatically.
-            </p>
+    <section className="border-t">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+        <div className="space-y-6 p-6 md:p-8 relative">
+          <div className="relative z-10 space-y-6">
+          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-medium tracking-tighter leading-tight">
+            Works with your tools.
+          </h2>
+          <p className="text-base md:text-lg text-muted-foreground leading-relaxed tracking-wide max-w-lg">
+            We integrate with your favorite CRMs, project management boards, and communication apps to capture updates automatically.
+          </p>
           </div>
-          <div className="CalloutSection_graphic__DaHKB DataSection_graphic__r_FIJ">
-            <div
-              style={{
-                background: 'var(--color-surface-gray)',
-                borderRadius: 'var(--radius)',
-                height: '100%',
-                width: '100%',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                padding: 'var(--spacer-lg)'
-              }}
-            >
-              <img
-                src={WorksWithToolsImage}
-                alt="Works with your tools - integrations with CRMs and project management"
-                className="content-image-mobile"
-                style={{
-                  width: '100%',
-                  height: 'auto',
-                  maxHeight: '320px',
-                  objectFit: 'contain',
-                  display: 'block'
-                }}
-              />
-            </div>
-            <div className="DataSection_animation__8pvV_"></div>
+        </div>
+        
+        <div className="relative border-l">
+          <div className="p-6 md:p-8 flex items-center justify-center min-h-[360px] overflow-hidden">
+            <img
+              src={WorksWithToolsImage}
+              alt="Works with your tools - integrations with CRMs and project management"
+              className="w-64 h-auto object-contain"
+            />
           </div>
         </div>
       </div>

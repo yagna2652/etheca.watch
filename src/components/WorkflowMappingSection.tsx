@@ -3,53 +3,26 @@ const StoryImage = '/images/Story-removebg-preview.png';
 
 const WorkflowMappingSection: React.FC = () => {
   return (
-    <section className="CalloutSection_section___KRUc">
-      <div className="CalloutSection_container__evjvR">
-        <div className="CalloutSection_callout_container__A2Wzj">
-          <div 
-            className="CalloutSection_content__6LL3k"
-            style={{
-              position: 'relative',
-              backgroundSize: '20px 20px',
-              backgroundImage: `
-                linear-gradient(to right, rgba(224, 224, 229, 0.3) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(224, 224, 229, 0.3) 1px, transparent 1px)
-              `,
-            }}
-          >
-            <h2 className="CalloutSection_title__7dfAl FeaturesSection_heading_2__z9mcA">
-              We map the chaos
-            </h2>
-            <p className="CalloutSection_description__MS245 FeaturesSection_body__S4iJv">
-              Our AI makes sense of your complex workflow so you don't have to. We turn that chaos into a simple prompt with the right updates, ready for your final say.
-            </p>
+    <section className="border-t border-b">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+        <div className="space-y-6 p-6 md:p-8 relative">
+          <div className="relative z-10 space-y-6">
+          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-medium tracking-tighter leading-tight">
+            We map the chaos
+          </h2>
+          <p className="text-base md:text-lg text-muted-foreground leading-relaxed tracking-wide max-w-lg">
+            Our AI makes sense of your complex workflow so you don't have to. We turn that chaos into a simple prompt with the right updates, ready for your final say.
+          </p>
           </div>
-          <div className="CalloutSection_graphic__DaHKB">
-            <div
-              style={{
-                background: 'var(--color-surface-gray)',
-                borderRadius: '0px',
-                height: '100%',
-                width: '100%',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                padding: '20px'
-              }}
-            >
-              <img
-                src={StoryImage}
-                alt="Review, Approve, Done - workflow approval process"
-                className="content-image-mobile"
-                style={{
-                  width: '100%',
-                  height: 'auto',
-                  maxHeight: '320px',
-                  objectFit: 'contain',
-                  display: 'block'
-                }}
-              />
-            </div>
+        </div>
+        
+        <div className="relative border-l">
+          <div className="p-6 md:p-8 flex items-center justify-center min-h-[360px] overflow-hidden">
+            <img
+              src={StoryImage}
+              alt="Review, Approve, Done - workflow approval process"
+              className="w-64 h-auto object-contain"
+            />
           </div>
         </div>
       </div>
