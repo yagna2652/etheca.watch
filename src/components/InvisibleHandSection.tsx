@@ -3,7 +3,7 @@ const InvisibleHandImage = '/images/Invisible-hand-removebg-preview.png';
 
 const InvisibleHandSection: React.FC = () => {
   return (
-    <section className="border-t border-l border-r container mx-auto relative">
+    <section className="border-t relative">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
         <div className="space-y-6 p-6 md:p-8 relative">
           <div
@@ -33,8 +33,8 @@ const InvisibleHandSection: React.FC = () => {
           </div>
         </div>
         
-        <div className="relative">
-          <div className="bg-white p-6 md:p-8 flex items-center justify-center min-h-[360px]">
+        <div className="relative border-l">
+          <div className="p-6 md:p-8 flex items-center justify-center min-h-[360px]">
             <img
               src={InvisibleHandImage}
               alt="The invisible hand that updates your data"

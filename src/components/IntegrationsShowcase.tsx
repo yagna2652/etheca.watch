@@ -3,7 +3,7 @@ const WorksWithToolsImage = '/images/workswithyourtools-removebg-preview.png';
 
 const IntegrationsShowcase: React.FC = () => {
   return (
-    <section className="border-t border-l border-r container mx-auto">
+    <section className="border-t">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
         <div className="space-y-6 p-6 md:p-8 relative">
           <div className="relative z-10 space-y-6">
@@ -16,8 +16,8 @@ const IntegrationsShowcase: React.FC = () => {
           </div>
         </div>
         
-        <div className="relative">
-          <div className="bg-white p-6 md:p-8 flex items-center justify-center min-h-[360px] overflow-hidden">
+        <div className="relative border-l">
+          <div className="p-6 md:p-8 flex items-center justify-center min-h-[360px] overflow-hidden">
             <img
               src={WorksWithToolsImage}
               alt="Works with your tools - integrations with CRMs and project management"
