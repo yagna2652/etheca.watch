@@ -3,55 +3,43 @@ const InvisibleHandImage = '/images/Invisible-hand-removebg-preview.png';
 
 const InvisibleHandSection: React.FC = () => {
   return (
-    <section style={{ position: 'relative' }}>
-      <div className="CalloutSection_section___KRUc" style={{ position: 'relative' }}>
-        <div className="CalloutSection_container__evjvR">
-          <div className="CalloutSection_callout_container__A2Wzj">
-            <div 
-              className="CalloutSection_content__6LL3k"
-              style={{
-                position: 'relative',
-                backgroundSize: '20px 20px',
-                backgroundImage: `
-                  linear-gradient(to right, rgba(224, 224, 229, 0.3) 1px, transparent 1px),
-                  linear-gradient(to bottom, rgba(224, 224, 229, 0.3) 1px, transparent 1px)
-                `,
-              }}
-            >
-              <h2 className="CalloutSection_title__7dfAl FeaturesSection_heading_2__z9mcA">
-                The invisible hand that updates your data
-              </h2>
-              <p className="CalloutSection_description__MS245 FeaturesSection_body__S4iJv">
-                Focus on your work, not data entry. Our AI learns your workflow to keep your source of truth perfectly accurate, guaranteed.
-              </p>
-            </div>
-            <div className="CalloutSection_graphic__DaHKB">
-              <div
-                style={{
-                  background: 'var(--color-surface-gray)',
-                  borderRadius: 'var(--radius)',
-                  height: '100%',
-                  width: '100%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  padding: '20px'
-                }}
-              >
-                <img
-                  src={InvisibleHandImage}
-                  alt="The invisible hand that updates your data"
-                  className="content-image-mobile"
-                  style={{
-                    width: '100%',
-                    height: 'auto',
-                    maxHeight: '320px',
-                    objectFit: 'contain',
-                    display: 'block'
-                  }}
-                />
-              </div>
-            </div>
+    <section className="border-t relative">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+        <div className="space-y-6 p-6 md:p-8 relative">
+          <div
+            className="absolute inset-0 opacity-80 pointer-events-none"
+            style={{
+              backgroundSize: '6px 6px',
+              backgroundPosition: '96px 96px',
+              backgroundImage: `
+                linear-gradient(to right, transparent 6px, hsl(var(--border)) 7px, hsl(var(--border)) 8px, transparent 9px),
+                linear-gradient(to bottom, transparent 6px, hsl(var(--border)) 7px, hsl(var(--border)) 8px, transparent 9px)
+              `,
+            }}
+          />
+          <div
+            className="absolute inset-0 bg-background pointer-events-none"
+            style={{
+              background: 'radial-gradient(ellipse at center, transparent 20%, hsl(var(--background)))',
+            }}
+          />
+          <div className="relative z-10 space-y-6">
+          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-medium tracking-tighter leading-tight">
+            The invisible hand that updates your data
+          </h2>
+          <p className="text-base md:text-lg text-muted-foreground leading-relaxed tracking-wide max-w-lg">
+            Focus on your work, not data entry. Our AI learns your workflow to keep your source of truth perfectly accurate, guaranteed.
+          </p>
+          </div>
+        </div>
+        
+        <div className="relative border-l">
+          <div className="p-6 md:p-8 flex items-center justify-center min-h-[360px]">
+            <img
+              src={InvisibleHandImage}
+              alt="The invisible hand that updates your data"
+              className="w-64 h-auto object-contain"
+            />
           </div>
         </div>
       </div>

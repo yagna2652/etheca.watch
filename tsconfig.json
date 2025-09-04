@@ -23,14 +23,24 @@
     "paths": {
       "@/*": [
         "./src/*"
+      ],
+      "contentlayer/generated": [
+        "./.contentlayer/generated"
       ]
     },
-    "incremental": true
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
-    "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    ".contentlayer/generated",
+    "next-env.d.ts",
+    ".next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"

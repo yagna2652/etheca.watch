@@ -1,63 +1,6 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@layer base {
-  :root {
-    --background: #f4f4f6;
-    --foreground: #1a1a22;
-    --card: #f4f4f6;
-    --card-foreground: #1a1a22;
-    --popover: #f4f4f6;
-    --popover-foreground: #1a1a22;
-    --primary: #2a2a32;
-    --primary-foreground: #ededf0;
-    --secondary: #e6e6ea;
-    --secondary-foreground: #2a2a32;
-    --muted: #e6e6ea;
-    --muted-foreground: #808088;
-    --accent: #e6e6ea;
-    --accent-foreground: #2a2a32;
-    --destructive: #dc2626;
-    --destructive-foreground: #ededf0;
-    --border: #e0e0e5;
-    --input: #e0e0e5;
-    --ring: #1a1a22;
-    --radius: 0.5rem;
-  }
-
-  .dark {
-    --background: #141418;
-    --foreground: #ededf0;
-    --card: #1f1f25;
-    --card-foreground: #ededf0;
-    --popover: #1f1f25;
-    --popover-foreground: #ededf0;
-    --primary: #e0e0e5;
-    --primary-foreground: #2a2a32;
-    --secondary: #33333a;
-    --secondary-foreground: #e0e0e5;
-    --muted: #33333a;
-    --muted-foreground: #a6a6ae;
-    --accent: #33333a;
-    --accent-foreground: #e0e0e5;
-    --destructive: #dc2626;
-    --destructive-foreground: #ededf0;
-    --border: #3d3d46;
-    --input: #3d3d46;
-    --ring: #ccccda;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-}
 
 /* Covik Sans Font Implementation */
 @font-face {
@@ -132,222 +75,40 @@
   font-display: swap;
 }
 
-/* CSS Variables */
-:root {
-  /* Layout Variables */
-  --vw: 100vw;
-  --vh: 100vh;
-  --ivh: 100vh;
-  --rem: 1px;
-  --layout-max-width: 1920px;
-  --layout-margin: 80px;
-  --layout-min-max: min(var(--vw), var(--layout-max-width));
-  --header-height: 70px;
-  
-  /* Spacing System - Mathematical Grid (Rule 10) */
-  --spacer-xs: 4px;
-  --spacer-sm: 8px;
-  --spacer-md: 16px;
-  --spacer-lg: 24px;
-  --spacer-xl: 32px;
-  --spacer-xxl: 48px;
-  --spacer-xxxl: 64px;
-  --block-gap: 80px;
-  --section-gap: 96px;
-  
-  /* Color System - Following Design Rules 1-7 */
-  --color-black-absolute: #0f0f11;
-  --color-white-absolute: #f2f2f4;
-  --color-white: var(--color-white-absolute);
-  --color-black: #181820;
-  --color-blue: #0a33ff;
-  --color-grey: #787885;
-  --color-border-blue: #e2e6f0;
-  --color-border-grid: #828294;
-  --color-border-grid-alpha-40-black: color-mix(in srgb, var(--color-border-grid), var(--color-black) 60%);
-  --color-border-grid-alpha-60-white: color-mix(in srgb, var(--color-border-grid), var(--color-white) 3%);
-  --color-border-grid-alpha-60-black: color-mix(in srgb, var(--color-border-grid), var(--color-black) 40%);
-  --color-surface-gray: #f4f4f6;
-  --color-surface-dark-gray: #ececf0;
-  --color-text-white: #f4f4f6;
-  --color-text-white-alpha-70: color-mix(in srgb, var(--color-text-white), var(--color-black) 30%);
-  --color-text-white-alpha-90: color-mix(in srgb, var(--color-text-white), var(--color-black) 10%);
-  --color-text-black: #1a1a22;
-  --color-text-black-alpha-50: color-mix(in srgb, var(--color-text-black), var(--color-white) 50%);
-  --color-text-black-alpha-65: color-mix(in srgb, var(--color-text-black), var(--color-white) 35%);
-  --color-text-black-alpha-70: color-mix(in srgb, var(--color-text-black), var(--color-white) 30%);
-  
-  /* Font System - Covik Sans Only */
-  --font-primary: 'Covik Sans';
-  --font-sans: 'Covik Sans';
-  --font-mono: 'Covik Sans';
-  --font-eiko: 'Covik Sans';
-  --font-neue-montreal: 'Covik Sans';
-  --font-atacama: 'Covik Sans';
-  
-  /* Grid System */
-  --column-count: 12;
-  
-  /* Font Sizes - Rule 17: Body text 16px minimum */
-  --text-xs: 0.875rem;
-  --text-sm: 1rem;
-  --text-base: 1rem;
-  --text-lg: 1.125rem;
-  --text-xl: 1.25rem;
-  --text-2xl: 1.5rem;
-  --text-3xl: 1.875rem;
-  --text-4xl: 2.25rem;
-  --text-5xl: 3rem;
-  
-}
+@layer base {
 
-/* Responsive adjustments */
-@media screen and (max-width: 900px) {
   :root {
-    --column-count: 6;
-    --layout-margin: 16px;
-    --section-gap: 90px;
-    --block-gap: 60px;
+    --background: 240 10% 97%; /* near-white from --color-surface-gray: #f4f4f6 */
+    --foreground: 240 8% 12%; /* near-black from --color-text-black: #1a1a22 */
+    --card: 240 10% 97%;
+    --card-foreground: 240 8% 12%;
+    --popover: 240 10% 97%;
+    --popover-foreground: 240 8% 12%;
+    /* Primary buttons: black background, white text */
+    --primary: 240 8% 12%;
+    --primary-foreground: 240 8% 97%;
+    --secondary: 240 5% 90%;
+    --secondary-foreground: 240 8% 12%;
+    --muted: 240 5% 90%;
+    --muted-foreground: 240 5% 45%; /* Grey for muted text */
+    --accent: 240 5% 85%;
+    --accent-foreground: 240 8% 12%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 240 5% 88%; /* Subtle border color */
+    --input: 240 5% 88%;
+    --ring: 240 8% 12%;
+    --radius: 0.5rem;
   }
 }
 
-/* Base styles */
-body {
-  font-family: var(--font-primary);
-  letter-spacing: -0.04em;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: var(--color-black);
-  background-color: var(--color-surface-gray);
-  width: 100%;
-  height: auto;
-  margin: 0;
-  overscroll-behavior: none;
-  max-width: 100vw;
-  min-height: 100vh;
-  position: relative;
-  padding: 0;
-  overflow-x: hidden;
-}
-
-html {
-  overflow: visible;
-  position: relative;
-  min-height: 100%;
-  font-size: var(--rem);
-  color: var(--color-black);
-  background: var(--color-surface-gray);
-  scroll-behavior: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-html::-webkit-scrollbar {
-  width: 0px;
-  background: transparent;
-}
-
-body::-webkit-scrollbar {
-  display: none;
-}
-
-@media screen and (max-width: 768px) {
+@layer base {
+  * {
+    @apply border-border;
+  }
   body {
-    -webkit-text-size-adjust: 100%;
+    @apply bg-background text-foreground;
+    font-family: "Covik Sans", sans-serif;
   }
 }
 
-/* Reset and base element styles */
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  text-rendering: optimizelegibility;
-  text-rendering: geometricprecision;
-  font-feature-settings: "liga", "clig off";
-  font-variant-ligatures: no-common-ligatures;
-  -moz-osx-font-smoothing: grayscale;
-  -moz-font-smoothing: antialiased;
-  -webkit-font-smoothing: antialiased;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  -webkit-touch-callout: none;
-}
-
-/* Typography Reset with Covik Sans */
-figure, h1, h2, h3, h4, h5, h6, p {
-  font-family: var(--font-primary);
-  font-size: inherit;
-  letter-spacing: inherit;
-  font-weight: 400;
-  margin: 0;
-}
-
-a, button {
-  cursor: pointer;
-  font-family: var(--font-primary);
-  font-weight: inherit;
-  text-decoration: none;
-  color: inherit;
-  letter-spacing: inherit;
-}
-
-button {
-  margin-top: 0;
-  margin-bottom: 0;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: none;
-  display: block;
-  cursor: pointer;
-  background: rgba(0, 0, 0, 0);
-  padding: 0;
-  color: inherit;
-  font-family: var(--font-primary);
-  line-height: inherit;
-  text-align: inherit;
-  text-transform: inherit;
-  font-size: inherit;
-}
-
-ol, ul {
-  padding: 0;
-  margin: 0;
-}
-
-ol li, ul li {
-  list-style-type: none;
-}
-
-img {
-  display: block;
-}
-
-code {
-  font-family: 'Covik Sans', source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-}
-
-/* Utility classes */
-.font-covik {
-  font-family: var(--font-primary);
-}
-
-.font-covik-medium {
-  font-family: var(--font-primary);
-  font-weight: 500;
-}
-
-.font-covik-semibold {
-  font-family: var(--font-primary);
-  font-weight: 600;
-}
-
-.font-covik-bold {
-  font-family: var(--font-primary);
-  font-weight: 700;
-}
-
-.font-covik-black {
-  font-family: var(--font-primary);
-  font-weight: 900;
-}
