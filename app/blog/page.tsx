@@ -29,8 +29,8 @@ export default function BlogPage() {
 
       {/* Main Content */}
       <main className="flex-1 relative">
-        <div className="max-w-7xl mx-auto min-h-screen">
-          <div className="max-w-4xl mx-auto border-l border-r py-16">
+        <div className="max-w-7xl mx-auto h-full">
+          <div className="max-w-4xl mx-auto border-l border-r h-full py-16">
             <div className="space-y-12">
               <div className="space-y-4 px-6">
                 <h1 className="text-4xl font-bold tracking-tight">Blog</h1>
