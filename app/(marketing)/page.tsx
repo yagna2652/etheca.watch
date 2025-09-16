@@ -5,6 +5,7 @@ import { HeroSection } from '@/components/hero-section';
 import { InvisibleHandSection } from '@/components/invisible-hand-section';
 import { SingleSourceSection } from '@/components/single-source-section';
 import { IntegrationsSection } from '@/components/integrations-section';
+import { TransparencySection } from '@/components/transparency-section';
 
 export default function HomePage() {
   const handleEmailSubmit = (email: string) => {
@@ -22,6 +23,7 @@ export default function HomePage() {
       <InvisibleHandSection />
       <SingleSourceSection />
       <IntegrationsSection />
+      <TransparencySection />
     </>
   );
 }

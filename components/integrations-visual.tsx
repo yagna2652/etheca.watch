@@ -29,7 +29,7 @@ const IntegrationsVisual = React.forwardRef<HTMLDivElement, IntegrationsVisualPr
           className={cn(
             "w-full h-full object-contain",
             // Responsive max width
-            "max-w-[280px] xs:max-w-[320px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] xl:max-w-[690px]",
+            "max-w-[280px] xs:max-w-[320px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] xl:max-w-[600px]",
             // Smooth loading
             "transition-opacity duration-300"
           )}

@@ -61,12 +61,12 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
               <div className="w-full max-w-sm xs:max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl">
 
                 {/* Main Heading */}
-                <h1 id="hero-heading" className="text-3xl xs:text-4xl sm:text-5xl md:text-4xl lg:text-5xl xl:text-6xl font-serif text-gray-900 tracking-[-0.04em] xs:tracking-[-0.05em] sm:tracking-[-0.06em] md:tracking-[-0.07em] lg:tracking-[-0.08em] xl:tracking-tight leading-tight xs:leading-tight sm:leading-tight md:leading-tight lg:leading-tight xl:leading-tight">
+                <h1 id="hero-heading" className="text-3xl xs:text-4xl sm:text-5xl md:text-4xl lg:text-5xl xl:text-5xl font-serif text-gray-900 tracking-[-0.04em] xs:tracking-[-0.05em] sm:tracking-[-0.06em] md:tracking-[-0.07em] lg:tracking-[-0.08em] xl:tracking-tight leading-tight xs:leading-tight sm:leading-tight md:leading-tight lg:leading-tight xl:leading-tight">
                   The last time you will ever<br />update a CRM.
                 </h1>
 
                 {/* Description */}
-                <p className="mt-6 xs:mt-7 sm:mt-8 md:mt-6 lg:mt-8 xl:mt-9 font-sans font-medium text-base xs:text-lg sm:text-xl md:text-lg lg:text-xl xl:text-[18px] text-gray-900 tracking-[-0.01em] xs:tracking-[-0.015em] sm:tracking-[-0.02em] md:tracking-[-0.025em] lg:tracking-[-0.03em] xl:tracking-[-0.72px] leading-relaxed xs:leading-relaxed sm:leading-relaxed md:leading-relaxed lg:leading-relaxed xl:leading-[24px] max-w-full xs:max-w-md sm:max-w-lg md:max-w-full lg:max-w-lg xl:max-w-lg">
+                <p className="mt-6 xs:mt-7 sm:mt-8 md:mt-6 lg:mt-8 xl:mt-9 font-sans font-medium text-base xs:text-lg sm:text-xl md:text-lg lg:text-xl xl:text-[16px] text-gray-900 tracking-[-0.01em] xs:tracking-[-0.015em] sm:tracking-[-0.02em] md:tracking-[-0.025em] lg:tracking-[-0.03em] xl:tracking-[-0.72px] leading-relaxed xs:leading-relaxed sm:leading-relaxed md:leading-relaxed lg:leading-relaxed xl:leading-[22px] max-w-full xs:max-w-md sm:max-w-lg md:max-w-full lg:max-w-lg xl:max-w-lg">
                   Get a perfectly accurate, up-to-the-second source of truth without the busywork. Free your team to focus on customers, not data entry.
                 </p>
 
@@ -104,7 +104,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
             {/* Hero Image Column */}
             {heroImageUrl && (
               <div className="md:col-span-1 lg:col-span-6 flex justify-center md:justify-end lg:justify-end">
-                <div className="aspect-square w-full max-w-xs xs:max-w-sm sm:max-w-md md:max-w-sm lg:max-w-md xl:max-w-lg">
+                <div className="aspect-square w-full max-w-xs xs:max-w-sm sm:max-w-md md:max-w-sm lg:max-w-md xl:max-w-md">
                   <img
                     src={heroImageUrl}
                     alt="Etheca automation platform interface showing data synchronization"

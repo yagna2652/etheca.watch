@@ -40,7 +40,7 @@ const InvisibleHandSection = React.forwardRef<HTMLElement, InvisibleHandSectionP
       >
         {/* Main Container */}
         <div className="relative mx-auto max-w-7xl px-4 xs:px-6 sm:px-6 md:px-8 lg:px-8 xl:px-12">
-          <div className="flex flex-col items-center gap-12 xs:gap-16 sm:gap-20 md:gap-24 lg:gap-28 xl:gap-[76px]">
+          <div className="flex flex-col items-start md:items-center gap-12 xs:gap-16 sm:gap-20 md:gap-24 lg:gap-28 xl:gap-[76px]">
 
             {/* Section Header */}
             <SectionHeader
