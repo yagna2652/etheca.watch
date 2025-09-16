@@ -10,11 +10,32 @@ module.exports = {
   ],
   prefix: "",
   theme: {
+    screens: {
+      'xs': '475px',
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1536px',
+    },
     container: {
       center: true,
-      padding: "2rem",
+      padding: {
+        DEFAULT: '1rem',
+        'xs': '1.5rem',
+        'sm': '2rem',
+        'md': '3rem',
+        'lg': '4rem',
+        'xl': '5rem',
+        '2xl': '6rem',
+      },
       screens: {
-        "2xl": "1400px",
+        'xs': '475px',
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '1400px',
       },
     },
     extend: {
@@ -62,6 +83,27 @@ module.exports = {
         sans: ["var(--font-public-sans)", "Public Sans", ...fontFamily.sans],
         serif: ["var(--font-young-serif)", "Young Serif", ...fontFamily.serif],
         mono: ["var(--font-public-sans)", "Public Sans", ...fontFamily.mono],
+      },
+      fontSize: {
+        'fluid-xs': 'clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem)',
+        'fluid-sm': 'clamp(0.875rem, 0.8rem + 0.375vw, 1rem)',
+        'fluid-base': 'clamp(1rem, 0.9rem + 0.5vw, 1.125rem)',
+        'fluid-lg': 'clamp(1.125rem, 1rem + 0.625vw, 1.25rem)',
+        'fluid-xl': 'clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem)',
+        'fluid-2xl': 'clamp(1.5rem, 1.3rem + 1vw, 2rem)',
+        'fluid-3xl': 'clamp(1.875rem, 1.5rem + 1.875vw, 2.25rem)',
+        'fluid-4xl': 'clamp(2.25rem, 1.8rem + 2.25vw, 3rem)',
+        'fluid-5xl': 'clamp(3rem, 2.25rem + 3.75vw, 4rem)',
+        'fluid-6xl': 'clamp(3.75rem, 2.75rem + 5vw, 5rem)',
+      },
+      spacing: {
+        'fluid-xs': 'clamp(0.5rem, 0.4rem + 0.5vw, 0.75rem)',
+        'fluid-sm': 'clamp(0.75rem, 0.6rem + 0.75vw, 1rem)',
+        'fluid-md': 'clamp(1rem, 0.8rem + 1vw, 1.5rem)',
+        'fluid-lg': 'clamp(1.5rem, 1.2rem + 1.5vw, 2rem)',
+        'fluid-xl': 'clamp(2rem, 1.6rem + 2vw, 3rem)',
+        'fluid-2xl': 'clamp(3rem, 2.4rem + 3vw, 4rem)',
+        'fluid-3xl': 'clamp(4rem, 3.2rem + 4vw, 6rem)',
       },
       keyframes: {
         "accordion-down": {
