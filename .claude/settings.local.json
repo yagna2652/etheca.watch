@@ -5,7 +5,9 @@
       "Bash(npx shadcn@latest add:*)",
       "Bash(git fetch:*)",
       "Read(//Users/yagna/Desktop/etheca-watch-new/**)",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "mcp__figma-dev-mode-mcp-server__get_code",
+      "mcp__figma-dev-mode-mcp-server__get_screenshot"
     ],
     "deny": [],
     "ask": []

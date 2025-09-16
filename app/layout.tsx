@@ -1,19 +1,12 @@
-import { Inter, Young_Serif, Public_Sans } from "next/font/google"
-import localFont from "next/font/local"
+import { Young_Serif, Public_Sans } from "next/font/google"
 
 import { siteConfig } from "../config/site"
 import { cn } from "../lib/utils"
 import { Analytics } from "../components/analytics"
 import { ThemeProvider } from "../components/theme-provider"
 import { TailwindIndicator } from "../components/tailwind-indicator"
-import { Toaster } from "../components/ui/toaster"
 
 import "../styles/globals.css"
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-})
 
 const youngSerif = Young_Serif({
   subsets: ["latin"],
@@ -39,7 +32,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
           className={cn(
             "min-h-screen bg-background font-sans antialiased",
             publicSans.variable,
-            inter.variable,
             youngSerif.variable
           )}
         >
@@ -54,7 +46,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
             </div>
             <TailwindIndicator />
             <Analytics />
-            <Toaster />
           </ThemeProvider>
         </body>
       </html>

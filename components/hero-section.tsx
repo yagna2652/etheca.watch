@@ -63,7 +63,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
                 </h1>
 
                 {/* Description */}
-                <p className="mt-9 font-sans font-normal text-[18px] text-[#bcb9b9] tracking-[-0.72px] leading-[24
+                <p className="mt-9 font-sans font-medium text-[18px] text-gray-900 tracking-[-0.72px] leading-[24
                 px] max-w-lg">
                   Get a perfectly accurate, up-to-the-second source of truth without the busywork. Free your team to focus on customers, not data entry.
                 </p>
@@ -83,7 +83,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
                     </div>
                     <Button
                       type="submit"
-                      className="h-10 px-4 bg-gray-900 text-white hover:bg-gray-800 transition-colors"
+                      className="bg-gray-900 text-white"
                       disabled={!email.trim()}
                     >
                       Join
