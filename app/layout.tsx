@@ -1,4 +1,4 @@
-import { Inter } from "next/font/google"
+import { Inter, Young_Serif, Public_Sans } from "next/font/google"
 import localFont from "next/font/local"
 
 import { siteConfig } from "../config/site"
@@ -8,47 +8,22 @@ import { ThemeProvider } from "../components/theme-provider"
 import { TailwindIndicator } from "../components/tailwind-indicator"
 import { Toaster } from "../components/ui/toaster"
 
-import "../src/index.css"
+import "../styles/globals.css"
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
 })
 
-const covikSans = localFont({
-  src: [
-    {
-      path: "../public/assets/fonnts.com-Covik_Sans.otf",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../public/assets/fonnts.com-Covik_Sans_Italic.otf",
-      weight: "400",
-      style: "italic",
-    },
-    {
-      path: "../public/assets/fonnts.com-Covik_Sans_Medium.otf",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "../public/assets/fonnts.com-Covik_Sans_Semibold.otf",
-      weight: "600",
-      style: "normal",
-    },
-    {
-      path: "../public/assets/fonnts.com-Covik_Sans_Bold.otf",
-      weight: "700",
-      style: "normal",
-    },
-    {
-      path: "../public/assets/fonnts.com-Covik_Sans_Black.otf",
-      weight: "900",
-      style: "normal",
-    },
-  ],
-  variable: "--font-covik-sans",
+const youngSerif = Young_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-young-serif",
+})
+
+const publicSans = Public_Sans({
+  subsets: ["latin"],
+  variable: "--font-public-sans",
 })
 
 interface RootLayoutProps {
@@ -63,8 +38,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <body
           className={cn(
             "min-h-screen bg-background font-sans antialiased",
-            covikSans.variable,
-            inter.variable
+            publicSans.variable,
+            inter.variable,
+            youngSerif.variable
           )}
         >
           <ThemeProvider

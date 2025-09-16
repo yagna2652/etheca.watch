@@ -1,21 +1,21 @@
-import React from 'react';
-import AutomationHero from '../../src/components/AutomationHero';
-import InvisibleHandSection from '../../src/components/InvisibleHandSection';
-import IntegrationsShowcase from '../../src/components/IntegrationsShowcase';
-import WorkflowMappingSection from '../../src/components/WorkflowMappingSection';
+"use client"
 
-export const metadata = {
-  title: "Etheca - The End of Manual Data Entry",
-  description: "We just observe how you work and then update your system of records accordingly. Focus on your work, not data entry.",
-}
+import React from 'react';
+import { HeroSection } from '@/components/hero-section';
 
 export default function HomePage() {
+  const handleEmailSubmit = (email: string) => {
+    // Handle email submission - you can implement your logic here
+    console.log('Email submitted:', email);
+  };
+
   return (
     <>
-      <AutomationHero />
-      <InvisibleHandSection />
-      <IntegrationsShowcase />
-      <WorkflowMappingSection />
+      <HeroSection
+        onEmailSubmit={handleEmailSubmit}
+        backgroundImageUrl="http://localhost:3845/assets/542b86e0c5d69f82773cc785ab8c854d1edda15b.svg"
+        heroImageUrl="http://localhost:3845/assets/0dd1a2b846fad94d73143069ad661cf5f9f22909.png"
+      />
     </>
   );
 }

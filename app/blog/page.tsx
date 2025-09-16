@@ -5,7 +5,7 @@ import { Metadata } from "next";
 // Import existing components to maintain the design system
 import { MainNav } from "../../components/main-nav";
 import { SiteFooter } from "../../components/site-footer";
-import BlogEntry from "../../src/components/BlogEntry";
+import BlogEntry from "../../components/blog-entry";
 
 export const metadata: Metadata = {
   title: "Blog - Etheca.Watch",
@@ -46,7 +46,7 @@ export default function BlogPage() {
                     id={post.slugAsParams}
                     title={post.title}
                     date={post.date}
-                    author={post.authors[0]}
+                    author={{ name: post.authors[0] || "Author" }}
                     description={post.description || ""}
                     thumbnail={post.image}
                   />

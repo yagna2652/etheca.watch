@@ -18,72 +18,47 @@ export function MainNav({ items }: MainNavProps) {
   const pathname = usePathname()
 
   return (
-    <>
-      {/* Logo - will be positioned on the left */}
-      <Link href="/" className="flex items-center space-x-1">
-        <Icons.logo className="h-10 w-10" />
-        <span className="inline-block text-3xl -tracking-wider font-medium">{siteConfig.name}</span>
-      </Link>
-      
-      {/* Navigation items and Contact Us - will be positioned on the right */}
-      <div className="flex items-center gap-6">
-        {/* Desktop Navigation */}
-        {items?.length ? (
-          <nav className="hidden gap-6 md:flex">
-            {items?.map(
-              (item, index) =>
-                item.href && (
-                  <Link
-                    key={index}
-                    href={item.href}
-                    className={cn(
-                      "flex items-center text-sm font-medium text-muted-foreground",
-                      item.disabled && "cursor-not-allowed opacity-80",
-                      pathname === item.href && "text-foreground"
-                    )}
-                  >
-                    {item.title}
-                  </Link>
-                )
-            )}
-          </nav>
-        ) : null}
+    <header className="w-full border-b border-[#eeeff2] bg-white">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="flex h-20 items-center justify-between">
 
-        {/* Mobile Navigation */}
-        {items?.length ? (
-          <nav className="md:hidden">
-            {items?.map(
-              (item, index) =>
-                item.href && (
-                  <Link
-                    key={index}
-                    href={item.href}
-                    className={cn(
-                      "flex items-center text-sm font-medium text-muted-foreground mr-4",
-                      item.disabled && "cursor-not-allowed opacity-80",
-                      pathname === item.href && "text-foreground"
-                    )}
-                  >
-                    {item.title}
-                  </Link>
-                )
-            )}
-          </nav>
-        ) : null}
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-1">
+            <div className="h-10 w-10 bg-center bg-cover bg-no-repeat">
+              <Icons.logo className="h-10 w-10" />
+            </div>
+            <span className="font-serif text-[32px] leading-4 tracking-[-1.6px] text-[#27353b]">
+              etheca
+            </span>
+          </Link>
 
-        <Button asChild variant="default" className="hidden sm:inline-flex">
-          <Link href="mailto:hello@etheca.watch">
-            Get a custom solution
-          </Link>
-        </Button>
-        
-        {/* Mobile Contact Button */}
-        <Button asChild variant="default" size="sm" className="sm:hidden">
-          <Link href="mailto:hello@etheca.watch">
-            Contact
-          </Link>
-        </Button>
+          {/* Navigation */}
+          <div className="flex items-center gap-12">
+
+            {/* Blog Link */}
+            <Link
+              href="/blog"
+              className={cn(
+                "font-medium text-[16px] tracking-[-0.04px] text-[#141413] leading-[22.4px]",
+                pathname === "/blog" && "underline decoration-solid [text-underline-position:from-font]"
+              )}
+            >
+              Blog
+            </Link>
+
+            {/* Get a custom solution Button */}
+            <Button
+              asChild
+              className="h-12 rounded-[12px] bg-[#141413] px-8 py-4 text-[16px] font-medium leading-4 tracking-[-0.08px] text-[#faf9f5] hover:bg-[#2a2a2a] border-[#141413]"
+            >
+              <Link href="mailto:hello@etheca.watch">
+                Get a custom solution
+              </Link>
+            </Button>
+
+          </div>
+        </div>
       </div>
-    </>
+    </header>
   )
 }

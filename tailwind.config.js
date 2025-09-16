@@ -61,8 +61,9 @@ module.exports = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        sans: ["Covik Sans", ...fontFamily.sans],
-        mono: ["Covik Sans", ...fontFamily.mono],
+        sans: ["var(--font-public-sans)", "Public Sans", ...fontFamily.sans],
+        serif: ["var(--font-young-serif)", "Young Serif", ...fontFamily.serif],
+        mono: ["var(--font-public-sans)", "Public Sans", ...fontFamily.mono],
       },
       keyframes: {
         "accordion-down": {
