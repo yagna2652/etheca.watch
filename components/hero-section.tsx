@@ -54,7 +54,7 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16 items-center">
 
             {/* Text Content Column */}
-            <div className="lg:col-span-6">
+            <div className="lg:col-span-6 flex justify-center lg:justify-start">
               <div className="max-w-2xl">
 
                 {/* Main Heading */}
@@ -98,8 +98,8 @@ const HeroSection = React.forwardRef<HTMLDivElement, HeroSectionProps>(
 
             {/* Hero Image Column */}
             {heroImageUrl && (
-              <div className="lg:col-span-6">
-                <div className="aspect-square w-full max-w-lg mx-auto lg:max-w-none">
+              <div className="lg:col-span-6 flex justify-end">
+                <div className="aspect-square w-full max-w-lg">
                   <div
                     className="w-full h-full bg-center bg-cover bg-no-repeat rounded-lg"
                     style={{ backgroundImage: `url('${heroImageUrl}')` }}
