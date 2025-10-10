@@ -1,6 +1,4 @@
-import { marketingConfig } from "../../config/marketing"
-import { MainNav } from "../../components/main-nav"
-import { SiteFooter } from "../../components/site-footer"
+// Marketing layout - no header/footer for clean landing pages
 
 interface MarketingLayoutProps {
   children: React.ReactNode
@@ -14,17 +12,6 @@ export const metadata = {
 export default async function MarketingLayout({
   children,
 }: MarketingLayoutProps) {
-  return (
-    <div className="flex min-h-screen flex-col">
-      <div className="sticky top-0 w-full z-40">
-        <MainNav items={marketingConfig.mainNav} />
-      </div>
-      <main className="flex-1 relative">
-        <div className="w-full">
-          {children}
-        </div>
-      </main>
-      <SiteFooter />
-    </div>
-  )
+  // Simple passthrough - just render children without header/footer
+  return <>{children}</>
 }

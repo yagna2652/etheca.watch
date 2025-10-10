@@ -1,4 +1,5 @@
-const { withContentlayer } = require("next-contentlayer")
+// Temporarily disable Contentlayer for faster dev server startup
+// const { withContentlayer } = require("next-contentlayer")
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -9,4 +10,6 @@ const nextConfig = {
   outputFileTracingRoot: __dirname
 }
 
-module.exports = withContentlayer(nextConfig)
+// Export without Contentlayer wrapper for now
+module.exports = nextConfig
+// module.exports = withContentlayer(nextConfig)

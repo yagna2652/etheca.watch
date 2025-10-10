@@ -29,8 +29,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <html lang="en" suppressHydrationWarning>
         <head />
         <body
+          suppressHydrationWarning
           className={cn(
-            "min-h-screen bg-background font-sans antialiased",
+            "min-h-screen font-sans antialiased",
             publicSans.variable,
             youngSerif.variable
           )}
@@ -41,9 +42,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             enableSystem={false}
             disableTransitionOnChange
           >
-            <div className="relative flex min-h-screen flex-col">
-              <div className="flex-1">{children}</div>
-            </div>
+            {children}
             <TailwindIndicator />
             <Analytics />
           </ThemeProvider>
