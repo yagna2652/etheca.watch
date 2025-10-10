@@ -65,13 +65,13 @@ export function ValuesClient() {
             <motion.div
               variants={fadeInUp}
               className="fixed"
-              style={{ left: '281px', top: '165px' }}
+              style={{ left: '281px', top: '169px' }}
             >
               <Link
                 href="/landing"
-                className="inline-flex items-center gap-1 text-sm font-[family-name:var(--font-swear-text)] italic text-white hover:text-gray-300 transition-colors"
+                className="inline-flex items-center gap-1 text-base font-[family-name:var(--font-swear-text)] italic text-white hover:text-gray-300 transition-colors"
               >
-                <CornerUpLeft className="w-3.5 h-3.5" />
+                <CornerUpLeft className="w-4 h-4" />
                 <span>Home</span>
               </Link>
             </motion.div>
@@ -82,7 +82,7 @@ export function ValuesClient() {
               style={{
                 left: '451px',
                 top: '0px',
-                width: '507px',
+                width: '680px',
                 height: '200px',
                 background: 'linear-gradient(to bottom, #1c1c1c 0%, transparent 100%)',
                 zIndex: 10
@@ -93,18 +93,18 @@ export function ValuesClient() {
             <motion.div
               variants={fadeInUp}
               className="absolute pb-32"
-              style={{ left: '451px', top: '169px', width: '507px' }}
+              style={{ left: '451px', top: '169px', width: '680px' }}
             >
               {/* Title and divider */}
               <div className="mb-10">
-                <h1 className="font-[family-name:var(--font-paper-mono)] text-xs text-[#ededed] mb-10 uppercase tracking-wide">
+                <h1 className="font-[family-name:var(--font-paper-mono)] text-base text-[#ededed] mb-10 uppercase tracking-wide">
                   Values
                 </h1>
                 <div className="w-full h-px bg-[#ededed]" />
               </div>
 
               {/* Values list */}
-              <div className="font-[family-name:var(--font-paper-mono)] text-xs text-white leading-relaxed">
+              <div className="font-[family-name:var(--font-paper-mono)] text-sm text-white leading-relaxed">
                 {/* Value 1 */}
                 <div className="mb-16">
                   <p className="mb-4">1. Effortless Clarity</p>
@@ -160,9 +160,9 @@ export function ValuesClient() {
             <motion.div variants={fadeInUp} className="shrink-0">
               <Link
                 href="/landing"
-                className="inline-flex items-center gap-1 text-sm font-[family-name:var(--font-swear-text)] italic text-white hover:text-gray-300 transition-colors"
+                className="inline-flex items-center gap-1 text-base font-[family-name:var(--font-swear-text)] italic text-white hover:text-gray-300 transition-colors"
               >
-                <CornerUpLeft className="w-3.5 h-3.5" />
+                <CornerUpLeft className="w-4 h-4" />
                 <span>Home</span>
               </Link>
             </motion.div>
@@ -171,14 +171,14 @@ export function ValuesClient() {
             <motion.div variants={fadeInUp} className="flex-1 max-w-2xl">
               {/* Title and divider */}
               <div className="mb-10">
-                <h1 className="font-[family-name:var(--font-paper-mono)] text-xs text-[#ededed] mb-10 uppercase tracking-wide">
+                <h1 className="font-[family-name:var(--font-paper-mono)] text-base text-[#ededed] mb-10 uppercase tracking-wide">
                   Values
                 </h1>
                 <div className="w-full h-px bg-[#ededed]" />
               </div>
 
               {/* Values list */}
-              <div className="font-[family-name:var(--font-paper-mono)] text-xs text-white leading-relaxed">
+              <div className="font-[family-name:var(--font-paper-mono)] text-sm text-white leading-relaxed">
                 {/* Value 1 */}
                 <div className="mb-16">
                   <p className="mb-4">1. Effortless Clarity</p>
