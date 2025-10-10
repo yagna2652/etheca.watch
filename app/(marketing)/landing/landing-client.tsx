@@ -21,22 +21,22 @@ const paperMono = localFont({
   weight: '400',
 });
 
-// Animation: fade in from bottom (starts invisible + 20px down, then slides up)
+// Animation: fade in from bottom (starts invisible + 10px down, then slides up)
 const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
+  initial: { opacity: 0, y: 10 },
   animate: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: 'easeOut' }
+    transition: { duration: 0.15, ease: 'easeOut' }
   },
 };
 
-// Animation: children appear one by one with 0.1s delay (like dominoes)
+// Animation: children appear one by one with 0.02s delay (like dominoes)
 const staggerContainer = {
   animate: {
     transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.2,
+      staggerChildren: 0.02,
+      delayChildren: 0,
     },
   },
 };
@@ -47,7 +47,7 @@ const logoVariant = {
   animate: {
     opacity: 1,
     scale: 1,
-    transition: { duration: 0.8, ease: [0.6, 0.05, 0.01, 0.9] }
+    transition: { duration: 0.2, ease: [0.6, 0.05, 0.01, 0.9] }
   },
 };
 
