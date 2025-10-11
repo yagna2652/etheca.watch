@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Swear Text';
+  src: url('/fonts/fonnts.com-Swear-Text-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Paper Mono';
+  src: url('/fonts/PaperMono-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: #1c1c1c !important;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+body {
+  font-family: 'Paper Mono', monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --font-swear-text: 'Swear Text', sans-serif;
+  --font-paper-mono: 'Paper Mono', monospace;
+  --bg-primary: #1c1c1c;
+  --text-primary: #ededed;
+  --text-secondary: #777777;
+  --border-color: #3a3a3a;
+}

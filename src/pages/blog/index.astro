@@ -1,0 +1,122 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const posts = (await getCollection('blog'))
+  .filter((post) => post.data.published)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+function formatDate(date: Date): string {
+  const day = date.getDate().toString().padStart(2, '0');
+  const month = (date.getMonth() + 1).toString().padStart(2, '0');
+  const year = date.getFullYear();
+  return `${day}.${month}.${year}`;
+}
+---
+
+<BaseLayout title="Blogs - Etheca" description="Selected writings and insights from the Etheca team">
+  <!-- DESKTOP LAYOUT -->
+  <div class="hidden lg:block relative w-full min-h-screen">
+    <!-- Home button - fixed position -->
+    <div class="fixed" style="left: 281px; top: 169px;">
+      <a
+        href="/landing"
+        class="inline-flex items-center gap-1 text-base font-medium italic text-white hover:text-gray-300 transition-colors"
+        style="font-family: var(--font-swear-text);"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+          <path d="M20 20v-7a4 4 0 0 0-4-4H4"></path>
+          <path d="M9 14 4 9l5-5"></path>
+        </svg>
+        <span>Home</span>
+      </a>
+    </div>
+
+    <!-- Fade gradient overlay -->
+    <div
+      class="fixed pointer-events-none"
+      style="left: 451px; top: 0px; width: 507px; height: 200px; background: linear-gradient(to bottom, #1c1c1c 0%, transparent 100%); z-index: 10;"
+    >
+    </div>
+
+    <!-- Blogs content - scrollable with bottom padding -->
+    <div class="absolute pb-32" style="left: 451px; top: 169px; width: 507px;">
+      <!-- Title and divider -->
+      <div class="mb-10">
+        <h1 class="text-base text-[#ededed] mb-0 uppercase tracking-wide" style="font-family: var(--font-paper-mono);">
+          Blogs
+        </h1>
+        <div class="w-full h-px bg-[#ededed]"></div>
+      </div>
+
+      <!-- Blog posts list -->
+      <div class="flex flex-col gap-[19px]">
+        {posts.map((post, index) => (
+          <div class="flex flex-col gap-4">
+            <a
+              href={`/blog/${post.slug}`}
+              class="flex gap-11 text-sm hover:opacity-70 transition-opacity"
+              style="font-family: var(--font-paper-mono);"
+            >
+              <p class="text-[#777777] shrink-0">{formatDate(post.data.date)}</p>
+              <p class="text-white">{post.data.title}</p>
+            </a>
+            {index < posts.length - 1 && (
+              <div class="w-full h-[0.5px] bg-[#3a3a3a]"></div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- MOBILE/TABLET LAYOUT -->
+  <div class="lg:hidden">
+    <div class="flex flex-col md:flex-row gap-8 md:gap-16 px-4 md:px-8 py-12 md:py-16 pb-32 max-w-7xl mx-auto">
+      <!-- Home button -->
+      <div class="shrink-0">
+        <a
+          href="/landing"
+          class="inline-flex items-center gap-1 text-base font-medium italic text-white hover:text-gray-300 transition-colors"
+          style="font-family: var(--font-swear-text);"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <path d="M20 20v-7a4 4 0 0 0-4-4H4"></path>
+            <path d="M9 14 4 9l5-5"></path>
+          </svg>
+          <span>Home</span>
+        </a>
+      </div>
+
+      <!-- Blogs content -->
+      <div class="flex-1 max-w-2xl">
+        <!-- Title and divider -->
+        <div class="mb-10">
+          <h1 class="text-base text-[#ededed] mb-0 uppercase tracking-wide" style="font-family: var(--font-paper-mono);">
+            Blogs
+          </h1>
+          <div class="w-full h-px bg-[#ededed]"></div>
+        </div>
+
+        <!-- Blog posts list -->
+        <div class="flex flex-col gap-[19px]">
+          {posts.map((post, index) => (
+            <div class="flex flex-col gap-4">
+              <a
+                href={`/blog/${post.slug}`}
+                class="flex flex-col sm:flex-row gap-2 sm:gap-11 text-sm hover:opacity-70 transition-opacity"
+                style="font-family: var(--font-paper-mono);"
+              >
+                <p class="text-[#777777] shrink-0">{formatDate(post.data.date)}</p>
+                <p class="text-white">{post.data.title}</p>
+              </a>
+              {index < posts.length - 1 && (
+                <div class="w-full h-[0.5px] bg-[#3a3a3a]"></div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

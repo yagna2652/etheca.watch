@@ -1,0 +1,183 @@
+---
+import '../styles/global.css';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Values - Etheca</title>
+  <meta name="description" content="The core values that guide how we build at Etheca">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+</head>
+<body>
+  <!-- DESKTOP LAYOUT -->
+  <div class="hidden lg:block relative w-full min-h-screen">
+    <!-- Home button - fixed position -->
+    <div class="fixed" style="left: 281px; top: 169px;">
+      <a
+        href="/landing"
+        class="inline-flex items-center gap-1 text-base font-medium italic text-white hover:text-gray-300 transition-colors"
+        style="font-family: var(--font-swear-text);"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+          <path d="M20 20v-7a4 4 0 0 0-4-4H4"></path>
+          <path d="M9 14 4 9l5-5"></path>
+        </svg>
+        <span>Home</span>
+      </a>
+    </div>
+
+    <!-- Fade gradient overlay -->
+    <div
+      class="fixed pointer-events-none"
+      style="left: 451px; top: 0px; width: 680px; height: 200px; background: linear-gradient(to bottom, #1c1c1c 0%, transparent 100%); z-index: 10;"
+    >
+    </div>
+
+    <!-- Values content - scrollable with bottom padding -->
+    <div class="absolute pb-32 animate-fade-in" style="left: 451px; top: 169px; width: 680px;">
+      <!-- Title and divider -->
+      <div class="mb-10">
+        <h1 class="text-base text-[#ededed] mb-10 uppercase tracking-wide" style="font-family: var(--font-paper-mono);">
+          Values
+        </h1>
+        <div class="w-full h-px bg-[#ededed]"></div>
+      </div>
+
+      <!-- Values list -->
+      <div class="text-sm text-white leading-relaxed" style="font-family: var(--font-paper-mono);">
+        <!-- Value 1 -->
+        <div class="mb-16">
+          <p class="mb-4">1. Effortless Clarity</p>
+          <p class="text-[#ededed] mb-2">We believe technology should clarify, not complicate.</p>
+          <p class="text-[#ededed] mb-0">
+            Etheca turns scattered actions into structured understanding — so teams don't waste time explaining what already happened. Clarity is our baseline, not a bonus.
+          </p>
+        </div>
+
+        <!-- Value 2 -->
+        <div class="mb-16">
+          <p class="mb-4">2. Calm Productivity</p>
+          <p class="text-[#ededed] mb-2">We design for peace of mind.</p>
+          <p class="text-[#ededed] mb-2">Automation shouldn't feel like acceleration; it should feel like relief.</p>
+          <p class="text-[#ededed] mb-0">
+            Etheca quietly handles the repetitive, the reportable, and the routine — leaving space for deep work, creative flow, and focus.
+          </p>
+        </div>
+
+        <!-- Value 3 -->
+        <div class="mb-16">
+          <p class="mb-4">3. Observant Design</p>
+          <p class="text-[#ededed] mb-2">Every detail we build is informed by observation, not assumption.</p>
+          <p class="text-[#ededed] mb-2">
+            Etheca watches how work naturally happens, then builds systems that fit that rhythm — never the other way around.
+          </p>
+          <p class="text-[#ededed] mb-0">We see design as a way to preserve human context, not replace it.</p>
+        </div>
+
+        <!-- Value 4 -->
+        <div>
+          <p class="mb-4">4. Truth in Context</p>
+          <p class="text-[#ededed] mb-2">Documentation without context is noise.</p>
+          <p class="text-[#ededed] mb-2">
+            Etheca's mission is to make every record — every insight, every action — meaningful by linking it back to why it happened.
+          </p>
+          <p class="text-[#ededed] mb-0">Our systems don't just store data; they preserve intent.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOBILE/TABLET LAYOUT -->
+  <div class="lg:hidden">
+    <div class="flex flex-col md:flex-row gap-8 md:gap-16 px-4 md:px-8 py-12 md:py-16 pb-32 max-w-7xl mx-auto animate-fade-in">
+      <!-- Home button -->
+      <div class="shrink-0">
+        <a
+          href="/landing"
+          class="inline-flex items-center gap-1 text-base font-medium italic text-white hover:text-gray-300 transition-colors"
+          style="font-family: var(--font-swear-text);"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+            <path d="M20 20v-7a4 4 0 0 0-4-4H4"></path>
+            <path d="M9 14 4 9l5-5"></path>
+          </svg>
+          <span>Home</span>
+        </a>
+      </div>
+
+      <!-- Values content -->
+      <div class="flex-1 max-w-2xl">
+        <!-- Title and divider -->
+        <div class="mb-10">
+          <h1 class="text-base text-[#ededed] mb-10 uppercase tracking-wide" style="font-family: var(--font-paper-mono);">
+            Values
+          </h1>
+          <div class="w-full h-px bg-[#ededed]"></div>
+        </div>
+
+        <!-- Values list -->
+        <div class="text-sm text-white leading-relaxed" style="font-family: var(--font-paper-mono);">
+          <!-- Value 1 -->
+          <div class="mb-16">
+            <p class="mb-4">1. Effortless Clarity</p>
+            <p class="text-[#ededed] mb-2">We believe technology should clarify, not complicate.</p>
+            <p class="text-[#ededed] mb-0">
+              Etheca turns scattered actions into structured understanding — so teams don't waste time explaining what already happened. Clarity is our baseline, not a bonus.
+            </p>
+          </div>
+
+          <!-- Value 2 -->
+          <div class="mb-16">
+            <p class="mb-4">2. Calm Productivity</p>
+            <p class="text-[#ededed] mb-2">We design for peace of mind.</p>
+            <p class="text-[#ededed] mb-2">Automation shouldn't feel like acceleration; it should feel like relief.</p>
+            <p class="text-[#ededed] mb-0">
+              Etheca quietly handles the repetitive, the reportable, and the routine — leaving space for deep work, creative flow, and focus.
+            </p>
+          </div>
+
+          <!-- Value 3 -->
+          <div class="mb-16">
+            <p class="mb-4">3. Observant Design</p>
+            <p class="text-[#ededed] mb-2">Every detail we build is informed by observation, not assumption.</p>
+            <p class="text-[#ededed] mb-2">
+              Etheca watches how work naturally happens, then builds systems that fit that rhythm — never the other way around.
+            </p>
+            <p class="text-[#ededed] mb-0">We see design as a way to preserve human context, not replace it.</p>
+          </div>
+
+          <!-- Value 4 -->
+          <div>
+            <p class="mb-4">4. Truth in Context</p>
+            <p class="text-[#ededed] mb-2">Documentation without context is noise.</p>
+            <p class="text-[#ededed] mb-2">
+              Etheca's mission is to make every record — every insight, every action — meaningful by linking it back to why it happened.
+            </p>
+            <p class="text-[#ededed] mb-0">Our systems don't just store data; they preserve intent.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-in {
+      animation: fade-in 0.3s ease-out;
+    }
+  </style>
+</body>
+</html>
