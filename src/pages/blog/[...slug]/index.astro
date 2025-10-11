@@ -60,7 +60,7 @@ function formatDate(date: Date): string {
           <h1 class="text-2xl font-bold text-white mb-4" style="font-family: var(--font-paper-mono);">
             {post.data.title}
           </h1>
-          <div class="flex items-center gap-4 text-sm text-[#777777] mb-0" style="font-family: var(--font-paper-mono);">
+          <div class="flex items-center gap-4 text-sm text-[#777777] mb-10" style="font-family: var(--font-paper-mono);">
             <time>{formatDate(post.data.date)}</time>
             {post.data.authors && post.data.authors.length > 0 && (
               <span>by {post.data.authors[0]}</span>
@@ -104,7 +104,7 @@ function formatDate(date: Date): string {
             <h1 class="text-2xl font-bold text-white mb-4" style="font-family: var(--font-paper-mono);">
               {post.data.title}
             </h1>
-            <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-sm text-[#777777] mb-0" style="font-family: var(--font-paper-mono);">
+            <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-sm text-[#777777] mb-10" style="font-family: var(--font-paper-mono);">
               <time>{formatDate(post.data.date)}</time>
               {post.data.authors && post.data.authors.length > 0 && (
                 <span>by {post.data.authors[0]}</span>

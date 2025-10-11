@@ -43,7 +43,7 @@ function formatDate(date: Date): string {
     <div class="absolute pb-32" style="left: 451px; top: 169px; width: 507px;">
       <!-- Title and divider -->
       <div class="mb-10">
-        <h1 class="text-base text-[#ededed] mb-0 uppercase tracking-wide" style="font-family: var(--font-paper-mono);">
+        <h1 class="text-base text-[#ededed] mb-10 uppercase tracking-wide" style="font-family: var(--font-paper-mono);">
           Blogs
         </h1>
         <div class="w-full h-px bg-[#ededed]"></div>
@@ -92,7 +92,7 @@ function formatDate(date: Date): string {
       <div class="flex-1 max-w-2xl">
         <!-- Title and divider -->
         <div class="mb-10">
-          <h1 class="text-base text-[#ededed] mb-0 uppercase tracking-wide" style="font-family: var(--font-paper-mono);">
+          <h1 class="text-base text-[#ededed] mb-10 uppercase tracking-wide" style="font-family: var(--font-paper-mono);">
             Blogs
           </h1>
           <div class="w-full h-px bg-[#ededed]"></div>
@@ -104,7 +104,7 @@ function formatDate(date: Date): string {
             <div class="flex flex-col gap-4">
               <a
                 href={`/blog/${post.slug}`}
-                class="flex flex-col sm:flex-row gap-2 sm:gap-11 text-sm hover:opacity-70 transition-opacity"
+                class="flex flex-row gap-11 text-sm hover:opacity-70 transition-opacity"
                 style="font-family: var(--font-paper-mono);"
               >
                 <p class="text-[#777777] shrink-0">{formatDate(post.data.date)}</p>
