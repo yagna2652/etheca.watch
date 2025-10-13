@@ -49,12 +49,12 @@ function formatDate(date: Date): string {
       <!-- Fade gradient overlay -->
       <div
         class="fixed pointer-events-none"
-        style="left: 451px; top: 0px; width: 507px; height: 200px; background: linear-gradient(to bottom, #1c1c1c 0%, transparent 100%); z-index: 10;"
+        style="left: 451px; top: 0px; width: 680px; height: 200px; background: linear-gradient(to bottom, #1c1c1c 0%, transparent 100%); z-index: 10;"
       >
       </div>
 
       <!-- Blog post content - scrollable -->
-      <article class="absolute pb-32" style="left: 451px; top: 169px; width: 507px;">
+      <article class="absolute pb-32" style="left: 451px; top: 169px; width: 680px;">
         <!-- Header -->
         <header class="mb-10">
           <h1 class="text-2xl font-bold text-white mb-4" style="font-family: var(--font-paper-mono);">
@@ -71,7 +71,7 @@ function formatDate(date: Date): string {
 
         <!-- Content -->
         <div
-          class="prose prose-invert max-w-none text-[#ededed]"
+          class="prose prose-sm prose-invert max-w-none text-[#ededed]"
           style="font-family: var(--font-paper-mono);"
         >
           <Content />
@@ -115,7 +115,7 @@ function formatDate(date: Date): string {
 
           <!-- Content -->
           <div
-            class="prose prose-invert max-w-none text-[#ededed]"
+            class="prose prose-sm prose-invert max-w-none text-[#ededed]"
             style="font-family: var(--font-paper-mono);"
           >
             <Content />
@@ -151,6 +151,7 @@ function formatDate(date: Date): string {
     color: #ededed;
     line-height: 1.7;
     margin-bottom: 1em;
+    font-size: 0.875rem; /* 14px to match text-sm */
   }
 
   .prose ul, .prose ol {
@@ -161,6 +162,7 @@ function formatDate(date: Date): string {
 
   .prose li {
     margin: 0.5em 0;
+    font-size: 0.875rem; /* 14px to match text-sm */
   }
 
   .prose strong {
